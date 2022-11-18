@@ -1,0 +1,95 @@
+@prefix ex: <http://example.org/> .
+@prefix mqv: <http://mappingQualityVocabulary.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix recipes: <http://ontology.foodlog.eu#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:mappingQualityAssessment a mqv:MappingAssessment ;
+    mqv:assessedMapping <recipes-mapping.ttl> .
+    
+    
+<recipes-mapping.ttl> a mqv:MappingDocument ;
+    mqv:createdBy ex:group03  ;
+    mqv:mappingComplexity "Medium".
+ 
+ex:group03 a mqv:Agent ;
+    rdfs:label "group 03" .
+
+
+ex:mappingValidationReport a mqv:MappingValidationReport ;
+    mqv:hasViolation ex:violation-0,
+        ex:violation-1,
+        ex:violation-2 .
+
+ex:refinement-0 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#>
+                DELETE { ?objectMap rr:datatype ?datatype }
+                INSERT { ?objectMap rr:datatype <http://www.w3.org/2001/XMLSchema#int> }
+                WHERE {
+                SELECT ?objectMap ?datatype
+                WHERE {
+                      ?objectMap rr:datatype ?datatype.
+                      FILTER(str(?objectMap) = "ub2bL179C16").
+                    }
+                }
+               """ ;
+    mqv:refinedViolation ex:violation-0 .
+
+ex:refinement-1 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#>
+                DELETE { ?objectMap rr:datatype ?datatype }
+                INSERT { ?objectMap rr:datatype <http://www.w3.org/2001/XMLSchema#int> }
+                WHERE {
+                SELECT ?objectMap ?datatype
+                WHERE {
+                      ?objectMap rr:datatype ?datatype.
+                      FILTER(str(?objectMap) = "ub2bL67C16").
+                    }
+                }
+               """ ;
+    mqv:refinedViolation ex:violation-1 .
+
+ex:refinement-2 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#>
+                DELETE { ?objectMap rr:datatype ?datatype }
+                INSERT { ?objectMap rr:datatype <http://www.w3.org/2001/XMLSchema#int> }
+                WHERE {
+                SELECT ?objectMap ?datatype
+                WHERE {
+                      ?objectMap rr:datatype ?datatype.
+                      FILTER(str(?objectMap) = "ub2bL227C16").
+                    }
+                }
+               """ ;
+    mqv:refinedViolation ex:violation-2 .
+
+ex:violation-0 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue recipes:stepNumber ;
+    mqv:inTripleMap <#RecipeStep> ;
+    mqv:isDescribedBy mqv:metricD7 ;
+    mqv:resultMessage "Usage of incorrect datatype." ;
+    mqv:wasRefinedBy ex:refinement-0 .
+
+ex:violation-1 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap5" ;
+    mqv:hasValue recipes:serving ;
+    mqv:inTripleMap <#Recipe> ;
+    mqv:isDescribedBy mqv:metricD7 ;
+    mqv:resultMessage "Usage of incorrect datatype." ;
+    mqv:wasRefinedBy ex:refinement-1 .
+
+ex:violation-2 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue recipes:stepNumber ;
+    mqv:inTripleMap <#RecipeStepNoIng> ;
+    mqv:isDescribedBy mqv:metricD7 ;
+    mqv:resultMessage "Usage of incorrect datatype." ;
+    mqv:wasRefinedBy ex:refinement-2 .
+

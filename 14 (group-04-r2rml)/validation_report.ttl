@@ -1,0 +1,115 @@
+@prefix Category: <http://ontology.recipepicker.eu/Category#> .
+@prefix Ingredient: <http://ontology.recipepicker.eu/Ingredient#> .
+@prefix Nutrients: <http://ontology.recipepicker.eu/Ingredient/Nutrients#> .
+@prefix Recipe: <http://ontology.recipepicker.eu/Recipe#> .
+@prefix Step: <http://ontology.recipepicker.eu/Recipe/Step#> .
+@prefix Uses: <http://ontology.recipepicker.eu/Uses#> .
+@prefix ex: <http://example.org/> .
+@prefix mqv: <http://mappingQualityVocabulary.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix www: <http://ontology.recipepicker.eu#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:mappingQualityAssessment a mqv:MappingAssessment ;
+    mqv:assessedMapping <recipes-mapping.ttl> .
+    
+<recipes-mapping.ttl> a mqv:MappingDocument ;
+    mqv:createdBy ex:group04  ;
+    mqv:mappingComplexity "Medium".
+ 
+ex:group04 a mqv:Agent ;
+    rdfs:label "group 04" .
+
+ex:mappingValidationReport a mqv:MappingValidationReport ;
+    mqv:hasViolation ex:violation-0,
+        ex:violation-1,
+        ex:violation-2,
+        ex:violation-3 .
+
+ex:refinement-0 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+            DELETE {
+                ?subject rr:class <http://ontology.recipepicker.eu#Nutrients> . 
+            }
+            INSERT {
+                ?subject rr:class <http://ontology.recipepicker.eu/Ingredient#Nutrients> 
+            }
+            WHERE {
+                <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/recipes-mapping.ttl#Nutrients> rr:subjectMap ?subject .
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-0 .
+
+ex:refinement-1 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.recipepicker.eu/Ingredient#Nutrients> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/recipes-mapping.ttl#Nutrients> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-1 .
+
+ex:refinement-2 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+            DELETE {
+                ?subject rr:class <http://ontology.recipepicker.eu#Step> . 
+            }
+            INSERT {
+                ?subject rr:class <http://ontology.recipepicker.eu/Recipe#Step> 
+            }
+            WHERE {
+                <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/recipes-mapping.ttl#Steps> rr:subjectMap ?subject .
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-2 .
+
+ex:refinement-3 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.recipepicker.eu/Recipe#Step> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/recipes-mapping.ttl#Steps> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-3 .
+
+ex:violation-0 a mqv:MappingViolation ;
+    mqv:hasLocation "subjectMap1" ;
+    mqv:hasValue www:Nutrients ;
+    mqv:inTripleMap <#Nutrients> ;
+    mqv:isDescribedBy mqv:metricD1 ;
+    mqv:resultMessage "Usage of undefined Class." ;
+    mqv:wasRefinedBy ex:refinement-0 .
+
+ex:violation-1 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap8" ;
+    mqv:hasValue www:isContainedBy ;
+    mqv:inTripleMap <#Nutrients> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-1 .
+
+ex:violation-2 a mqv:MappingViolation ;
+    mqv:hasLocation "subjectMap1" ;
+    mqv:hasValue www:Step ;
+    mqv:inTripleMap <#Steps> ;
+    mqv:isDescribedBy mqv:metricD1 ;
+    mqv:resultMessage "Usage of undefined Class." ;
+    mqv:wasRefinedBy ex:refinement-2 .
+
+ex:violation-3 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap2" ;
+    mqv:hasValue www:isProvidedBy ;
+    mqv:inTripleMap <#Steps> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-3 .
+

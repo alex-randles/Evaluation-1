@@ -1,0 +1,46 @@
+@prefix ex: <http://example.org/> .
+@prefix mqv: <http://mappingQualityVocabulary.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix wclass: <http://recipes.workingclass.org#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:mappingQualityAssessment a mqv:MappingAssessment ;
+    mqv:assessedMapping <mappingV3.ttl> .
+
+ex:mappingValidationReport a mqv:MappingValidationReport ;
+    mqv:hasViolation ex:violation-0 .
+
+ex:group12 a mqv:Agent ;
+    rdfs:label "group 12" .
+
+ex:refinement-0 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://recipes.workingclass.org#carbohydrates> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub2bL214C24").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-0 .
+
+<mappingV3.ttl> a mqv:MappingDocument ;
+    mqv:createdBy ex:group12 ;
+    mqv:mappingComplexity "Medium" .
+
+ex:violation-0 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap7" ;
+    mqv:hasValue wclass:cabrohydrates ;
+    mqv:inTripleMap <#Product> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-0 .
+

@@ -1,0 +1,74 @@
+@prefix ex: <http://example.org/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix mqv: <http://mappingQualityVocabulary.org/> .
+@prefix ont: <http://ontologies.geohive.ie/osi#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:mappingQualityAssessment a mqv:MappingAssessment ;
+    mqv:assessedMapping <Parish_20m.ttl> .
+
+
+    
+<Parish_20m.ttl> a mqv:MappingDocument ;
+    mqv:createdBy ex:data.geohive.ie ;
+    mqv:mappingComplexity "Low".
+
+ex:data.geohive.ie a mqv:Agent ;
+    rdfs:label "data.geohive.ie" .
+
+
+ex:mappingValidationReport a mqv:MappingValidationReport ;
+    mqv:hasViolation ex:violation-0,
+        ex:violation-1 .
+
+ex:refinement-0 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE { ?objectMap rr:language "ga" } 
+                INSERT { ?objectMap rr:language "en-IE" } 
+                WHERE { 
+                SELECT ?objectMap
+                WHERE {
+                      ?objectMap rr:language "ga" .
+                      FILTER(str(?objectMap) = "ub8bL33C16").
+                    }
+                }
+               """ ;
+    mqv:refinedViolation ex:violation-0 .
+
+ex:refinement-1 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://ontologies.geohive.ie/osi#lastUpdate> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub8bL39C24").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-1 .
+
+ex:violation-0 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap3" ;
+    mqv:hasValue "ga" ;
+    mqv:inTripleMap <#TriplesMap1> ;
+    mqv:isDescribedBy mqv:metricMP12 ;
+    mqv:resultMessage "Language tag not defined in RFC 5646." ;
+    mqv:wasRefinedBy ex:refinement-0 .
+
+ex:violation-1 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap4" ;
+    mqv:hasValue ont:logainmId ;
+    mqv:inTripleMap <#TriplesMap1> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-1 .
+

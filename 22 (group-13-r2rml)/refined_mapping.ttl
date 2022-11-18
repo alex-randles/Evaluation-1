@@ -1,0 +1,596 @@
+@prefix xml: <http://www.w3.org/XML/1998/namespace> . 
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> . 
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . 
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> . 
+@prefix rr: <http://www.w3.org/ns/r2rml#> . 
+@prefix recipes: <http://ois.vub.ac.be/foodprint/ontology/recipes#> . 
+@prefix or: <http://ois.vub.ac.be/foodprint/ontology/routes#> . 
+@prefix ro: <http://ois.vub.ac.be/foodprint/routes#> . 
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> . 
+@prefix time: <http://www.w3.org/2006/time#> . 
+@prefix foaf: <http://xmlns.com/foaf/> . 
+@prefix opengis: <http://www.opengis.net/ont/geosparql#> . 
+
+	
+<#TransportModeMap>	
+	
+ rr:logicalTable [ 	
+ 	 rr:tableName  "TransportMode" ;	
+ ];	
+	
+ rr:subjectMap [ 	
+ 	 rr:template  "http://ois.vub.ac.be/foodprint/routes#TransportMode_{name}" ;	
+	 rr:class  or:TransportMode ;	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  foaf:name ;	
+	 rr:objectMap  [	
+		 rr:column  "name" ;	
+		 rr:dataType  xsd:string ;	
+		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  or:footPrintPerKm ;	
+	 rr:objectMap  [	
+		 rr:column  "footprintPerKm" ;	
+		 rr:dataType  xsd:float ;	
+		]; 	
+ ];	
+.	
+	
+<#RecipesMap>	
+	
+ rr:logicalTable [ 	
+ 	 rr:sqlQuery """ 	
+      SELECT name, 	
+      CASE skillLevel 	
+         WHEN '0' THEN 'Beginner'	
+         WHEN '1' THEN 'Easy' 	
+         WHEN '2' THEN 'Intermediate'	
+         WHEN '3' THEN 'Difficult' 	
+         WHEN '4' THEN 'Advanced'	
+      END as skillLevel, idRecipe, Ingredient_name, value as amount	
+      FROM Recipe	
+      JOIN RecipeIngredient 	
+      ON RecipeIngredient.Recipe_idRecipe = Recipe.idRecipe;	
+       """;	
+ ];	
+	
+ rr:subjectMap [ 	
+ 	 rr:class  recipes:Recipe ;	
+	 rr:template  "http://ois.vub.ac.be/foodprint/recipes#Recipe{idRecipe}" ;	
+	 rr:class  <ub77bL116C17> ;;	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  foaf:name ;	
+	 rr:objectMap  [	
+		 rr:column  "name" ;	
+		 rr:termType  rr:Literal ;	
+		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  recipes:skillLevel ;	
+	 rr:objectMap  [	
+		 rr:template  "http://ois.vub.ac.be/foodprint/ontology/recipes#{skillLevel}" ;	
+		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  recipes:consistsOfSteps ;	
+	 rr:objectMap  [	
+		 rr:parentTriplesMap  <#RecipeStepMap> ;	
+		 rr:joinCondition  [	
+			 rr:child  "idRecipe" ;	
+			 rr:parent  "Recipe_idRecipe" ;	
+			 ];	
+ 		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  recipes:containsIngredient ;	
+	 rr:objectMap  [	
+		 rr:parentTriplesMap  <#IngredientMap> ;	
+		 rr:joinCondition  [	
+			 rr:child  "Ingredient_name" ;	
+			 rr:parent  "name" ;	
+			 ];	
+ 		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  recipes:hasIngredientWithQuantity ;	
+	 rr:objectMap  [	
+		 rr:parentTriplesMap  <#RelationalRecipeIngredientMap> ;	
+		 rr:joinCondition  [	
+			 rr:parent  "Recipe_idRecipe" ;	
+			 rr:child  "idRecipe" ;	
+			 ];	
+ 		]; 	
+ ];	
+.	
+	
+<#RecipeIngredientMap>	
+	
+ rr:logicalTable [ 	
+ 	 rr:sqlQuery """ 	
+      SELECT Step_idStep, Ingredient_name, value, 	
+      CASE unit 	
+         WHEN 'kg' THEN 'Kilogram' 	
+         WHEN 'l' THEN 'Litre'	
+         WHEN 'g' THEN 'Gram' 	
+         WHEN 'cl' THEN 'Centilitre'	
+      END as measurementUnit	
+      FROM StepIngredient;	
+       """;	
+ ];	
+	
+ rr:subjectMap [ 	
+ 	 rr:class  recipes:RecipeIngredient ;	
+	 rr:template  "http://ois.vub.ac.be/foodprint/recipes#RecipeIngredient_{Step_idStep}_{Ingredient_name}" ;	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  recipes:hasIngredient ;	
+	 rr:objectMap  [	
+		 rr:parentTriplesMap  <#IngredientMap> ;	
+		 rr:joinCondition  [	
+			 rr:child  "Ingredient_name" ;	
+			 rr:parent  "name" ;	
+			 ];	
+ 		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  recipes:hasAmount ;	
+	 rr:objectMap  [	
+		 rr:column  "value" ;	
+		 rr:dataType  xsd:float ;	
+		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  recipes:hasUnit ;	
+	 rr:objectMap  [	
+		 rr:template  "http://ois.vub.ac.be/foodprint/ontology/recipes#{measurementUnit}" ;	
+		]; 	
+ ];	
+.	
+	
+<#RouteMap>	
+	
+ rr:logicalTable [ 	
+ 	 rr:sqlQuery """ 	
+      SELECT startingpoint_latitude, 	
+             startingpoint_longitude, 	
+             idRoute,	
+             shop_name,	
+             Connection_from_latitude as from_latitude,	
+             Connection_to_latitude as to_latitude,	
+             Connection_from_longitude as from_longitude,	
+             Connection_to_longitude as to_longitude,	
+             Connection_mode as mode FROM Route	
+      JOIN Route_has_Connection	
+      ON Route.idRoute = Route_has_Connection.Route_idRoute    	
+       """;	
+ ];	
+	
+ rr:subjectMap [ 	
+ 	 rr:template  "http://ois.vub.ac.be/foodprint/routes#Route_{idRoute}" ;	
+	 rr:class  or:Route ;	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  or:routeHasStartPoint ;	
+	 rr:objectMap  [	
+		 rr:parentTriplesMap  <#NodeMap> ;	
+		 rr:joinCondition  [	
+			 rr:child  "startingpoint_latitude" ;	
+			 rr:parent  "latitude" ;	
+			 ];	
+ 			 rr:joinCondition  [	
+				 rr:child  "startingpoint_longitude" ;	
+				 rr:parent  "longitude" ;	
+				 ];	
+ 		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  or:routeHasEndpoint ;	
+	 rr:objectMap  [	
+		 rr:parentTriplesMap  <#ShopMap> ;	
+		 rr:joinCondition  [	
+			 rr:parent  "name" ;	
+			 rr:child  "shop_name" ;	
+			 ];	
+ 		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  or:consistsOfConnections ;	
+	 rr:objectMap  [	
+		 rr:parentTriplesMap  <#ConnectionMap> ;	
+		 rr:joinCondition  [	
+			 rr:child  "to_latitude" ;	
+			 rr:parent  "to_latitude" ;	
+			 ];	
+ 			 rr:joinCondition  [	
+				 rr:child  "mode" ;	
+				 rr:parent  "mode" ;	
+				 ];	
+ 				 rr:joinCondition  [	
+					 rr:parent  "from_longitude" ;	
+					 rr:child  "from_longitude" ;	
+					 ];	
+ 					 rr:joinCondition  [	
+						 rr:parent  "to_longitude" ;	
+						 rr:child  "to_longitude" ;	
+						 ];	
+ 						 rr:joinCondition  [	
+							 rr:child  "from_latitude" ;	
+							 rr:parent  "from_latitude" ;	
+							 ];	
+ 							 rr:joinCondition  [	
+								 rr:child  "from_latitude" ;	
+								 rr:parent  "from_latitude" ;	
+								 ];	
+ 		]; 	
+ ];	
+.	
+	
+<#RelationalRecipeIngredientMap>	
+	
+ rr:logicalTable [ 	
+ 	 rr:sqlQuery """ 	
+      SELECT Recipe_idRecipe, Ingredient_name, value, 	
+      CASE unit 	
+         WHEN 'kg' THEN 'Kilogram' 	
+         WHEN 'l' THEN 'Litre'	
+         WHEN 'g' THEN 'Gram' 	
+         WHEN 'cl' THEN 'Centilitre'	
+      END as measurementUnit	
+      FROM RecipeIngredient ;	
+       """;	
+ ];	
+	
+ rr:subjectMap [ 	
+ 	 rr:template  "http://ois.vub.ac.be/foodprint/recipes#RecipeIngredientR_{Recipe_idRecipe}_{Ingredient_name}" ;	
+	 rr:class  recipes:RecipeIngredient ;	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  recipes:hasIngredient ;	
+	 rr:objectMap  [	
+		 rr:parentTriplesMap  <#IngredientMap> ;	
+		 rr:joinCondition  [	
+			 rr:child  "Ingredient_name" ;	
+			 rr:parent  "name" ;	
+			 ];	
+ 		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  recipes:hasAmount ;	
+	 rr:objectMap  [	
+		 rr:column  "value" ;	
+		 rr:dataType  xsd:int ;	
+		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  recipes:hasUnit ;	
+	 rr:objectMap  [	
+		 rr:template  "http://ois.vub.ac.be/foodprint/ontology/recipes#{measurementUnit}" ;	
+		]; 	
+ ];	
+.	
+	
+<#ConnectionMap>	
+	
+ rr:logicalTable [ 	
+ 	 rr:tableName  "Connection" ;	
+ ];	
+	
+ rr:subjectMap [ 	
+ 	 rr:class  or:Connection ;	
+	 rr:template  "http://ois.vub.ac.be/foodprint/routes#Connection{mode}-{from_latitude}_{from_longitude}-{to_latitude}_{to_longitude}" ;	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  or:fromPoint ;	
+	 rr:objectMap  [	
+		 rr:parentTriplesMap  <#NodeMap> ;	
+		 rr:joinCondition  [	
+			 rr:child  "from_longitude" ;	
+			 rr:parent  "longitude" ;	
+			 ];	
+ 			 rr:joinCondition  [	
+				 rr:parent  "latitude" ;	
+				 rr:child  "from_latitude" ;	
+				 ];	
+ 		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  or:toPoint ;	
+	 rr:objectMap  [	
+		 rr:parentTriplesMap  <#NodeMap> ;	
+		 rr:joinCondition  [	
+			 rr:child  "to_latitude" ;	
+			 rr:parent  "latitude" ;	
+			 ];	
+ 			 rr:joinCondition  [	
+				 rr:child  "to_longitude" ;	
+				 rr:parent  "longitude" ;	
+				 ];	
+ 		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  or:transportedBy ;	
+	 rr:objectMap  [	
+		 rr:parentTriplesMap  <#TransportModeMap> ;	
+		 rr:joinCondition  [	
+			 rr:parent  "name" ;	
+			 rr:child  "mode" ;	
+			 ];	
+ 		]; 	
+ ];	
+.	
+	
+<#PointMap>	
+	
+ rr:logicalTable [ 	
+ 	 rr:tableName  "DistributionPoint" ;	
+ ];	
+	
+ rr:subjectMap [ 	
+ 	 rr:class  geo:Point ;	
+	 rr:template  "_:PointBlankNode{longitude},{latitude}" ;	
+	 rr:termType  rr:BlankNode ;	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  geo:long ;	
+	 rr:objectMap  [	
+		 rr:column  "longitude" ;	
+		 rr:dataType  xsd:float ;	
+		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  geo:lat ;	
+	 rr:objectMap  [	
+		 rr:column  "latitude" ;	
+		 rr:dataType  xsd:float ;	
+		]; 	
+ ];	
+.	
+	
+<#IngredientMap>	
+	
+ rr:logicalTable [ 	
+ 	 rr:sqlQuery """ 	
+       SELECT Ingredient.name, IngredientProduct.Product_name as pname FROM Ingredient 	
+       LEFT JOIN	
+       IngredientProduct ON	
+       IngredientProduct.ingredient_name = Ingredient.name	
+        """;	
+ ];	
+	
+ rr:subjectMap [ 	
+ 	 rr:template  "http://ois.vub.ac.be/foodprint/recipes#Ingredient_{name}" ;	
+	 rr:class  recipes:Ingredient ;	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  foaf:name ;	
+	 rr:objectMap  [	
+		 rr:dataType  xsd:string ;	
+		 rr:column  "name" ;	
+		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  recipes:instanceOfProduct ;	
+	 rr:objectMap  [	
+		 rr:template  "http://ois.vub.ac.be/foodprint/routes#Product_{pname}" ;	
+		]; 	
+ ];	
+.	
+	
+<#StepDurationMap>	
+	
+ rr:logicalTable [ 	
+ 	 rr:tableName  "Step" ;	
+ ];	
+	
+ rr:subjectMap [ 	
+ 	 rr:class  time:GeneralDurationDescription ;	
+	 rr:termType  rr:BlankNode ;	
+	 rr:template  "_:StepDuration_{idStep}_{prepareTime}" ;	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  time:seconds ;	
+	 rr:objectMap  [	
+		 rr:column  "prepareTime" ;	
+		 rr:dataType  xsd:decimal ;	
+		]; 	
+ ];	
+.	
+	
+<#StepMap>	
+	
+ rr:logicalTable [ 	
+ 	 rr:tableName  "Step" ;	
+ ];	
+	
+ rr:subjectMap [ 	
+ 	 rr:class  <ub78bL116C17> ;;	
+	 rr:class  recipes:Step ;	
+	 rr:template  "http://ois.vub.ac.be/foodprint/recipes#Step_{idStep}" ;	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  recipes:hasIngredientWithQuantity ;	
+	 rr:objectMap  [	
+		 rr:parentTriplesMap  <#RecipeIngredientMap> ;	
+		 rr:joinCondition  [	
+			 rr:parent  "Step_idStep" ;	
+			 rr:child  "idStep" ;	
+			 ];	
+ 		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  recipes:description ;	
+	 rr:objectMap  [	
+		 rr:dataType  xsd:string ;	
+		 rr:column  "description" ;	
+		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  recipes:stepDuration ;	
+	 rr:objectMap  [	
+		 rr:template  "_:StepDuration_{idStep}_{prepareTime}" ;	
+		 rr:termType  rr:BlankNode ;	
+		]; 	
+ ];	
+.	
+	
+<#RecipeStepMap>	
+	
+ rr:logicalTable [ 	
+ 	 rr:tableName  "RecipeStep" ;	
+ ];	
+	
+ rr:subjectMap [ 	
+ 	 rr:class  recipes:RecipeStepItem ;	
+	 rr:template  "http://ois.vub.ac.be/foodprint/recipes#RecipeStep_{Recipe_idRecipe}_{order}" ;	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  recipes:order ;	
+	 rr:objectMap  [	
+		 rr:column  "order" ;	
+		 rr:dataType  xsd:int ;	
+		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  recipes:describesStep ;	
+	 rr:objectMap  [	
+		 rr:parentTriplesMap  <#StepMap> ;	
+		 rr:joinCondition  [	
+			 rr:parent  "idStep" ;	
+			 rr:child  "Step_idStep" ;	
+			 ];	
+ 		]; 	
+ ];	
+.	
+	
+<#ProductMap>	
+	
+ rr:logicalTable [ 	
+ 	 rr:sqlQuery """ 	
+      SELECT name, Route_idRoute FROM Product 	
+      JOIN ProductRoutes ON Product.name = ProductRoutes.Product_name	
+       """;	
+ ];	
+	
+ rr:subjectMap [ 	
+ 	 rr:template  "http://ois.vub.ac.be/foodprint/routes#Product_{name}" ;	
+	 rr:class  or:Product ;	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  foaf:name ;	
+	 rr:objectMap  [	
+		 rr:dataType  xsd:string ;	
+		 rr:column  "name" ;	
+		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  or:travelsAlong ;	
+	 rr:objectMap  [	
+		 rr:parentTriplesMap  <#RouteMap> ;	
+		 rr:joinCondition  [	
+			 rr:child  "Route_idRoute" ;	
+			 rr:parent  "idRoute" ;	
+			 ];	
+ 		]; 	
+ ];	
+.	
+	
+<#ShopMap>	
+	
+ rr:logicalTable [ 	
+ 	 rr:sqlQuery """ 	
+      SELECT Shop.name as name, longitude, latitude	
+      FROM Shop JOIN DistributionPoint	
+      ON DistributionPoint.shop_name = Shop.Name	
+       """;	
+ ];	
+	
+ rr:subjectMap [ 	
+ 	 rr:class  or:Shop ;	
+	 rr:template  "http://ois.vub.ac.be/foodprint/routes#Node_{longitude}_{latitude}" ;	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  foaf:name ;	
+	 rr:objectMap  [	
+		 rr:column  "name" ;	
+		 rr:dataType  xsd:string ;	
+		]; 	
+ ];	
+.	
+	
+<#DistributionPointMap>	
+	
+ rr:logicalTable [ 	
+ 	 rr:sqlQuery """ 	
+      SELECT longitude, latitude FROM	
+      DistributionPoint	
+      WHERE shop_name IS NULL	
+       """;	
+ ];	
+	
+ rr:subjectMap [ 	
+ 	 rr:template  "http://ois.vub.ac.be/foodprint/routes#Node_{longitude}_{latitude}" ;	
+	 rr:class  or:DistributionPoint ;	
+ ];	
+.	
+	
+<#NodeMap>	
+	
+ rr:logicalTable [ 	
+ 	 rr:tableName  "DistributionPoint" ;	
+ ];	
+	
+ rr:subjectMap [ 	
+ 	 rr:template  "http://ois.vub.ac.be/foodprint/routes#Node_{longitude}_{latitude}" ;	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  or:location ;	
+	 rr:objectMap  [	
+		 rr:template  "_:PointBlankNode{longitude},{latitude}" ;	
+		 rr:termType  rr:BlankNode ;	
+		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  or:locationWkt ;	
+	 rr:objectMap  [	
+		 rr:template  "POINT({latitude} {longitude})" ;	
+		 rr:datatype  opengis:wktLiteral ;	
+		]; 	
+ ];	
+.	

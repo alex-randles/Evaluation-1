@@ -1,0 +1,438 @@
+@prefix ex: <http://example.org/> .
+@prefix flavourtown: <http://www.semanticweb.org/FlavourTown#> .
+@prefix mqv: <http://mappingQualityVocabulary.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+
+<flavour-mapping.ttl> a mqv:MappingDocument ;
+    mqv:createdBy ex:group10   ;
+    mqv:mappingComplexity "Medium".
+ 
+ 
+ex:group10 a mqv:Agent ;
+    rdfs:label "group 10" .
+
+ex:mappingQualityAssessment a mqv:MappingAssessment ;
+    mqv:assessedMapping <flavour-mapping.ttl> .
+
+ex:mappingValidationReport a mqv:MappingValidationReport ;
+    mqv:hasViolation ex:violation-0,
+        ex:violation-1,
+        ex:violation-10,
+        ex:violation-11,
+        ex:violation-12,
+        ex:violation-13,
+        ex:violation-14,
+        ex:violation-15,
+        ex:violation-16,
+        ex:violation-17,
+        ex:violation-2,
+        ex:violation-3,
+        ex:violation-4,
+        ex:violation-5,
+        ex:violation-6,
+        ex:violation-7,
+        ex:violation-8,
+        ex:violation-9 .
+
+ex:group10 a mqv:Agent ;
+    rdfs:label "group 10" .
+
+ex:refinement-0 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://www.semanticweb.org/FlavourTown#recipe_serves> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub2bL96C25").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-0 .
+
+ex:refinement-1 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://www.semanticweb.org/FlavourTown#consists_of> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub2bL128C25").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-1 .
+
+ex:refinement-10 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://www.semanticweb.org/FlavourTown#recipe_name> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub2bL101C25").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-3 .
+
+ex:refinement-11 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://www.semanticweb.org/FlavourTown#belongs_to> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub2bL106C25").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-4 .
+
+ex:refinement-12 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+            DELETE {
+                ?subject rr:class <http://www.semanticweb.org/FlavourTown#preparationStep> . 
+            }
+            INSERT {
+                ?subject rr:class <http://www.semanticweb.org/FlavourTown#PreparationStep> 
+            }
+            WHERE {
+                <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/flavour-mapping.ttl#PreparationSteps> rr:subjectMap ?subject .
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-5 .
+
+ex:refinement-13 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://www.semanticweb.org/FlavourTown#instruction_set> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub2bL157C25").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-6 .
+
+ex:refinement-14 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://www.semanticweb.org/FlavourTown#step_number> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub2bL152C25").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-7 .
+
+ex:refinement-15 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://www.semanticweb.org/FlavourTown#provides_ingredient> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub2bL207C25").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-8 .
+
+ex:refinement-16 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://www.semanticweb.org/FlavourTown#flavour_name> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub2bL32C25").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-9 .
+
+ex:refinement-2 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://www.semanticweb.org/FlavourTown#Ingredient_name> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub2bL49C25").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-10 .
+
+ex:refinement-3 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://www.semanticweb.org/FlavourTown#tastes_like> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub2bL74C25").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-11 .
+
+ex:refinement-4 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://www.semanticweb.org/FlavourTown#Ingredient> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/flavour-mapping.ttl#Ingredients> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-12 .
+
+ex:refinement-5 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://www.semanticweb.org/FlavourTown#Ingredient> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/flavour-mapping.ttl#Ingredients> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-13 .
+
+ex:refinement-6 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://www.semanticweb.org/FlavourTown#Ingredient> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/flavour-mapping.ttl#Ingredients> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-15 .
+
+ex:refinement-7 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://www.semanticweb.org/FlavourTown#provides_flavour> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub2bL180C25").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-16 .
+
+ex:refinement-8 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://www.semanticweb.org/FlavourTown#cuisine_name> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub2bL16C25").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-17 .
+
+ex:refinement-9 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://www.semanticweb.org/FlavourTown#has_ingredient> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub2bL117C25").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-2 .
+
+
+ex:violation-0 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue flavourtown:recipeServes ;
+    mqv:inTripleMap <#Recipes> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-0 .
+
+ex:violation-1 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap5" ;
+    mqv:hasValue flavourtown:consistsOf ;
+    mqv:inTripleMap <#Recipes> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-1 .
+
+ex:violation-10 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue flavourtown:ingredientName ;
+    mqv:inTripleMap <#Ingredients> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-2 .
+
+ex:violation-11 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap6" ;
+    mqv:hasValue flavourtown:tastesLike ;
+    mqv:inTripleMap <#Ingredients> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-3 .
+
+ex:violation-12 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap2" ;
+    mqv:hasValue flavourtown:calories ;
+    mqv:inTripleMap <#Ingredients> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-4 .
+
+ex:violation-13 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap4" ;
+    mqv:hasValue flavourtown:protein ;
+    mqv:inTripleMap <#Ingredients> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-5 .
+
+ex:violation-15 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap5" ;
+    mqv:hasValue flavourtown:fat ;
+    mqv:inTripleMap <#Ingredients> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-6 .
+
+ex:violation-16 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap2" ;
+    mqv:hasValue flavourtown:provideFlavour ;
+    mqv:inTripleMap <#FlavourRelations> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-7 .
+
+ex:violation-17 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue flavourtown:cuisineName ;
+    mqv:inTripleMap <#Cuisines> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-8 .
+
+ex:violation-2 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap4" ;
+    mqv:hasValue flavourtown:hasIngredient ;
+    mqv:inTripleMap <#Recipes> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-9 .
+
+ex:violation-3 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap2" ;
+    mqv:hasValue flavourtown:recipeName ;
+    mqv:inTripleMap <#Recipes> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-10 .
+
+ex:violation-4 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap3" ;
+    mqv:hasValue flavourtown:belongsTo ;
+    mqv:inTripleMap <#Recipes> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-11 .
+
+ex:violation-5 a mqv:MappingViolation ;
+    mqv:hasLocation "subjectMap1" ;
+    mqv:hasValue flavourtown:preparationStep ;
+    mqv:inTripleMap <#PreparationSteps> ;
+    mqv:isDescribedBy mqv:metricD1 ;
+    mqv:resultMessage "Usage of undefined Class." ;
+    mqv:wasRefinedBy ex:refinement-12 .
+
+ex:violation-6 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap2" ;
+    mqv:hasValue flavourtown:instructionSet ;
+    mqv:inTripleMap <#PreparationSteps> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-13 .
+
+ex:violation-7 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue flavourtown:stepNumber ;
+    mqv:inTripleMap <#PreparationSteps> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-14 .
+
+ex:violation-8 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap2" ;
+    mqv:hasValue flavourtown:provideIngredient ;
+    mqv:inTripleMap <#IngredientRelations> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-15 .
+
+ex:violation-9 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue flavourtown:flavourName ;
+    mqv:inTripleMap <#Flavours> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-16 .
+

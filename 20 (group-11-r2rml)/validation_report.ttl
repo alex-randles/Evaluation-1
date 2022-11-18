@@ -1,0 +1,496 @@
+@prefix ex: <http://example.org/> .
+@prefix gym: <http://ontology.smartfitgym.eu#> .
+@prefix mqv: <http://mappingQualityVocabulary.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:mappingQualityAssessment a mqv:MappingAssessment ;
+    mqv:assessedMapping <gym-mapping2.ttl> .
+
+ex:mappingValidationReport a mqv:MappingValidationReport ;
+    mqv:hasViolation ex:violation-0,
+        ex:violation-1,
+        ex:violation-10,
+        ex:violation-11,
+        ex:violation-12,
+        ex:violation-13,
+        ex:violation-14,
+        ex:violation-15,
+        ex:violation-16,
+        ex:violation-17,
+        ex:violation-18,
+        ex:violation-19,
+        ex:violation-2,
+        ex:violation-3,
+        ex:violation-4,
+        ex:violation-5,
+        ex:violation-6,
+        ex:violation-7,
+        ex:violation-8,
+        ex:violation-9 .
+
+<gym-mapping2.ttl> a mqv:MappingDocument ;
+    mqv:createdBy ex:group11  ;
+    mqv:mappingComplexity "Medium".
+ 
+
+ex:group11 a mqv:Agent ;
+    rdfs:label "group 11" .
+
+ex:refinement-0 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+            DELETE {
+                ?subject rr:class <http://ontology.smartfitgym.eu#exercise> . 
+            }
+            INSERT {
+                ?subject rr:class <http://ontology.smartfitgym.eu#Exercises> 
+            }
+            WHERE {
+                <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/gym-mapping2.ttl#exercise> rr:subjectMap ?subject .
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-0 .
+
+ex:refinement-1 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://ontology.smartfitgym.eu#exercise_name> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub2bL19C24").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-1 .
+
+ex:refinement-10 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+            DELETE {
+                ?subject rr:class <http://ontology.smartfitgym.eu#exercisetypes> . 
+            }
+            INSERT {
+                ?subject rr:class <http://ontology.smartfitgym.eu#Exercise_Types> 
+            }
+            WHERE {
+                <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/gym-mapping2.ttl#exercisetypes> rr:subjectMap ?subject .
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-18 .
+
+ex:refinement-11 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://ontology.smartfitgym.eu#exercise-type> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub2bL170C24").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-19 .
+
+ex:refinement-12 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://ontology.smartfitgym.eu#caloriesper10mins> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub2bL23C24").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-2 .
+
+ex:refinement-13 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://ontology.smartfitgym.eu#exercise-type> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub2bL41C24").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-3 .
+
+ex:refinement-14 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.smartfitgym.eu#Exercises> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/gym-mapping2.ttl#exercise> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-4 .
+
+ex:refinement-15 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+            DELETE {
+                ?subject rr:class <http://ontology.smartfitgym.eu#workout> . 
+            }
+            INSERT {
+                ?subject rr:class <http://ontology.smartfitgym.eu#Workouts> 
+            }
+            WHERE {
+                <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/gym-mapping2.ttl#workout> rr:subjectMap ?subject .
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-5 .
+
+ex:refinement-16 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://ontology.smartfitgym.eu#workout-type> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub2bL92C25").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-6 .
+
+ex:refinement-17 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://ontology.smartfitgym.eu#caloriesper10mins> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub2bL71C24").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-7 .
+
+ex:refinement-18 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://ontology.smartfitgym.eu#workout_name> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub2bL67C24").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-8 .
+
+ex:refinement-19 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.smartfitgym.eu#Exercises> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/gym-mapping2.ttl#workout> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-9 .
+
+ex:refinement-2 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.smartfitgym.eu#Workouts> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/gym-mapping2.ttl#workout> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-10 .
+
+ex:refinement-3 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+            DELETE {
+                ?subject rr:class <http://ontology.smartfitgym.eu#bodyparts> . 
+            }
+            INSERT {
+                ?subject rr:class <http://ontology.smartfitgym.eu#Bodyparts> 
+            }
+            WHERE {
+                <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/gym-mapping2.ttl#bodyparts> rr:subjectMap ?subject .
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-11 .
+
+ex:refinement-4 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://ontology.smartfitgym.eu#bodypartname> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub2bL150C24").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-12 .
+
+ex:refinement-5 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+            DELETE {
+                ?subject rr:class <http://ontology.smartfitgym.eu#goal> . 
+            }
+            INSERT {
+                ?subject rr:class <http://ontology.smartfitgym.eu#Goals> 
+            }
+            WHERE {
+                <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/gym-mapping2.ttl#goal> rr:subjectMap ?subject .
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-13 .
+
+ex:refinement-6 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://ontology.smartfitgym.eu#goals-name> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub2bL118C24").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-14 .
+
+ex:refinement-7 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.smartfitgym.eu#Goals> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/gym-mapping2.ttl#goal> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-15 .
+
+ex:refinement-8 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+            DELETE {
+                ?subject rr:class <http://ontology.smartfitgym.eu#workouttypes> . 
+            }
+            INSERT {
+                ?subject rr:class <http://ontology.smartfitgym.eu#Workout_Types> 
+            }
+            WHERE {
+                <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/gym-mapping2.ttl#workouttypes> rr:subjectMap ?subject .
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-16 .
+
+ex:refinement-9 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://ontology.smartfitgym.eu#workout-type> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub2bL190C24").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-17 .
+
+ex:violation-0 a mqv:MappingViolation ;
+    mqv:hasLocation "subjectMap1" ;
+    mqv:hasValue gym:exercise ;
+    mqv:inTripleMap <#exercise> ;
+    mqv:isDescribedBy mqv:metricD1 ;
+    mqv:resultMessage "Usage of undefined Class." ;
+    mqv:wasRefinedBy ex:refinement-0 .
+
+ex:violation-1 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue gym:name ;
+    mqv:inTripleMap <#exercise> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-1 .
+
+ex:violation-10 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap3" ;
+    mqv:hasValue gym:tool ;
+    mqv:inTripleMap <#workout> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-2 .
+
+ex:violation-11 a mqv:MappingViolation ;
+    mqv:hasLocation "subjectMap1" ;
+    mqv:hasValue gym:bodyparts ;
+    mqv:inTripleMap <#bodyparts> ;
+    mqv:isDescribedBy mqv:metricD1 ;
+    mqv:resultMessage "Usage of undefined Class." ;
+    mqv:wasRefinedBy ex:refinement-3 .
+
+ex:violation-12 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue gym:name ;
+    mqv:inTripleMap <#bodyparts> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-4 .
+
+ex:violation-13 a mqv:MappingViolation ;
+    mqv:hasLocation "subjectMap1" ;
+    mqv:hasValue gym:goal ;
+    mqv:inTripleMap <#goal> ;
+    mqv:isDescribedBy mqv:metricD1 ;
+    mqv:resultMessage "Usage of undefined Class." ;
+    mqv:wasRefinedBy ex:refinement-5 .
+
+ex:violation-14 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue gym:name ;
+    mqv:inTripleMap <#goal> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-6 .
+
+ex:violation-15 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap2" ;
+    mqv:hasValue gym:helpstobuild ;
+    mqv:inTripleMap <#goal> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-7 .
+
+ex:violation-16 a mqv:MappingViolation ;
+    mqv:hasLocation "subjectMap1" ;
+    mqv:hasValue gym:workouttypes ;
+    mqv:inTripleMap <#workouttypes> ;
+    mqv:isDescribedBy mqv:metricD1 ;
+    mqv:resultMessage "Usage of undefined Class." ;
+    mqv:wasRefinedBy ex:refinement-8 .
+
+ex:violation-17 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue gym:type ;
+    mqv:inTripleMap <#workouttypes> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-9 .
+
+ex:violation-18 a mqv:MappingViolation ;
+    mqv:hasLocation "subjectMap1" ;
+    mqv:hasValue gym:exercisetypes ;
+    mqv:inTripleMap <#exercisetypes> ;
+    mqv:isDescribedBy mqv:metricD1 ;
+    mqv:resultMessage "Usage of undefined Class." ;
+    mqv:wasRefinedBy ex:refinement-10 .
+
+ex:violation-19 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue gym:type ;
+    mqv:inTripleMap <#exercisetypes> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-11 .
+
+ex:violation-2 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap2" ;
+    mqv:hasValue gym:calories ;
+    mqv:inTripleMap <#exercise> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-12 .
+
+ex:violation-3 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap4" ;
+    mqv:hasValue gym:hastypes ;
+    mqv:inTripleMap <#exercise> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-13 .
+
+ex:violation-4 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap3" ;
+    mqv:hasValue gym:achieve ;
+    mqv:inTripleMap <#exercise> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-14 .
+
+ex:violation-5 a mqv:MappingViolation ;
+    mqv:hasLocation "subjectMap1" ;
+    mqv:hasValue gym:workout ;
+    mqv:inTripleMap <#workout> ;
+    mqv:isDescribedBy mqv:metricD1 ;
+    mqv:resultMessage "Usage of undefined Class." ;
+    mqv:wasRefinedBy ex:refinement-15 .
+
+ex:violation-6 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap5" ;
+    mqv:hasValue gym:hastypes ;
+    mqv:inTripleMap <#workout> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-16 .
+
+ex:violation-7 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap2" ;
+    mqv:hasValue gym:calories ;
+    mqv:inTripleMap <#workout> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-17 .
+
+ex:violation-8 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue gym:name ;
+    mqv:inTripleMap <#workout> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-18 .
+
+ex:violation-9 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap4" ;
+    mqv:hasValue gym:achieve ;
+    mqv:inTripleMap <#workout> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-19 .
+

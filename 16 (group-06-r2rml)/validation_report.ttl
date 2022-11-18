@@ -1,0 +1,384 @@
+@prefix country: <http://eulersharp.sourceforge.net/2003/03swap/countries#> .
+@prefix ex: <http://example.org/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mqv: <http://mappingQualityVocabulary.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix recipes: <http://ontology.wearehungry.be#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:mappingQualityAssessment a mqv:MappingAssessment ;
+    mqv:assessedMapping <recipes-mapping.ttl> .
+    
+<recipes-mapping.ttl> a mqv:MappingDocument ;
+    mqv:createdBy ex:group06   ;
+    mqv:mappingComplexity "Medium".
+ 
+ 
+ex:group06 a mqv:Agent ;
+    rdfs:label "group 06" .
+
+ex:mappingValidationReport a mqv:MappingValidationReport ;
+    mqv:hasViolation ex:violation-0,
+        ex:violation-1,
+        ex:violation-10,
+        ex:violation-11,
+        ex:violation-12,
+        ex:violation-13,
+        ex:violation-14,
+        ex:violation-15,
+        ex:violation-16,
+        ex:violation-17,
+        ex:violation-2,
+        ex:violation-3,
+        ex:violation-4,
+        ex:violation-5,
+        ex:violation-6,
+        ex:violation-7,
+        ex:violation-8,
+        ex:violation-9 .
+
+ex:refinement-0 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.wearehungry.be#Recipe> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/recipes-mapping.ttl#RecipeContainsIngredientProperty> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-0 .
+
+ex:refinement-1 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.wearehungry.be#Recipe> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/recipes-mapping.ttl#RecipesIsServedInProperty> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-1 .
+
+ex:refinement-10 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.wearehungry.be#Recipe> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/recipes-mapping.ttl#RecipeContainsAmountIngredientProperty> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-2 .
+
+ex:refinement-11 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.wearehungry.be#Ingredient> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/recipes-mapping.ttl#CommenPropIngredients> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-3 .
+
+ex:refinement-12 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.wearehungry.be#Ingredient> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/recipes-mapping.ttl#CommenPropIngredients> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-4 .
+
+ex:refinement-13 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.wearehungry.be#Ingredient> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/recipes-mapping.ttl#CommenPropIngredients> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-5 .
+
+ex:refinement-14 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.wearehungry.be#Ingredient> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/recipes-mapping.ttl#CommenPropIngredients> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-6 .
+
+ex:refinement-15 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.wearehungry.be#Ingredient> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/recipes-mapping.ttl#CommenPropIngredients> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-7 .
+
+ex:refinement-16 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.wearehungry.be#Ingredient> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/recipes-mapping.ttl#CommenPropIngredients> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-8 .
+
+ex:refinement-17 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.wearehungry.be#Ingredient> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/recipes-mapping.ttl#blankNodesForPriceClass> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-9 .
+
+ex:refinement-2 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.wearehungry.be#Ingredient> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/recipes-mapping.ttl#IngredientSeasonProperty> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-10 .
+
+ex:refinement-3 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.wearehungry.be#Recipe> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/recipes-mapping.ttl#RecipeToolsProperty> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-11 .
+
+ex:refinement-4 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.wearehungry.be#Recipe> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/recipes-mapping.ttl#CommonPropRecipes> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-12 .
+
+ex:refinement-5 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.wearehungry.be#Recipe> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/recipes-mapping.ttl#CommonPropRecipes> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-13 .
+
+ex:refinement-6 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.wearehungry.be#Recipe> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/recipes-mapping.ttl#CommonPropRecipes> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-14 .
+
+ex:refinement-7 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.wearehungry.be#Recipe> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/recipes-mapping.ttl#RecipePreparationStepsProperty> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-15 .
+
+ex:refinement-8 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.wearehungry.be#Recipe> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/recipes-mapping.ttl#RecipesServedAsProperty> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-16 .
+
+ex:refinement-9 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.wearehungry.be#Ingredient> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/recipes-mapping.ttl#IngredientTastesFlavor> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-17 .
+
+ex:violation-0 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue recipes:containsIngredient ;
+    mqv:inTripleMap <#RecipeContainsIngredientProperty> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-0 .
+
+ex:violation-1 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue recipes:isServedIn ;
+    mqv:inTripleMap <#RecipesIsServedInProperty> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-1 .
+
+ex:violation-10 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue recipes:inSeason ;
+    mqv:inTripleMap <#IngredientSeasonProperty> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-2 .
+
+ex:violation-11 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue recipes:uses ;
+    mqv:inTripleMap <#RecipeToolsProperty> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-3 .
+
+ex:violation-12 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap2" ;
+    mqv:hasValue recipes:preparationTime ;
+    mqv:inTripleMap <#CommonPropRecipes> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-4 .
+
+ex:violation-13 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap3" ;
+    mqv:hasValue recipes:quantityPerson ;
+    mqv:inTripleMap <#CommonPropRecipes> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-5 .
+
+ex:violation-14 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap4" ;
+    mqv:hasValue recipes:originCountry ;
+    mqv:inTripleMap <#CommonPropRecipes> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-6 .
+
+ex:violation-15 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue recipes:has ;
+    mqv:inTripleMap <#RecipePreparationStepsProperty> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-7 .
+
+ex:violation-16 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue recipes:servedAs ;
+    mqv:inTripleMap <#RecipesServedAsProperty> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-8 .
+
+ex:violation-17 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue recipes:tastes ;
+    mqv:inTripleMap <#IngredientTastesFlavor> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-9 .
+
+ex:violation-2 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue recipes:contains ;
+    mqv:inTripleMap <#RecipeContainsAmountIngredientProperty> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-10 .
+
+ex:violation-3 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap5" ;
+    mqv:hasValue recipes:dietryFiber ;
+    mqv:inTripleMap <#CommenPropIngredients> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-11 .
+
+ex:violation-4 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap7" ;
+    mqv:hasValue recipes:protein ;
+    mqv:inTripleMap <#CommenPropIngredients> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-12 .
+
+ex:violation-5 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap3" ;
+    mqv:hasValue recipes:fat ;
+    mqv:inTripleMap <#CommenPropIngredients> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-13 .
+
+ex:violation-6 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap6" ;
+    mqv:hasValue recipes:sal ;
+    mqv:inTripleMap <#CommenPropIngredients> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-14 .
+
+ex:violation-7 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap4" ;
+    mqv:hasValue recipes:glucide ;
+    mqv:inTripleMap <#CommenPropIngredients> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-15 .
+
+ex:violation-8 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap2" ;
+    mqv:hasValue recipes:energy ;
+    mqv:inTripleMap <#CommenPropIngredients> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-16 .
+
+ex:violation-9 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue recipes:costs ;
+    mqv:inTripleMap <#blankNodesForPriceClass> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-17 .
+

@@ -1,0 +1,87 @@
+@prefix ex: <http://example.org/> .
+@prefix foaf: <http://xmlns.com/foaf/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix mqv: <http://mappingQualityVocabulary.org/> .
+@prefix opengis: <http://www.opengis.net/ont/geosparql#> .
+@prefix or: <http://ois.vub.ac.be/foodprint/ontology/routes#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix recipes: <http://ois.vub.ac.be/foodprint/ontology/recipes#> .
+@prefix ro: <http://ois.vub.ac.be/foodprint/routes#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:mappingQualityAssessment a mqv:MappingAssessment ;
+    mqv:assessedMapping <r2rml.ttl> .
+
+ex:mappingValidationReport a mqv:MappingValidationReport ;
+    mqv:hasViolation ex:violation-0,
+        ex:violation-1,
+        ex:violation-2 .
+
+ex:group13 a mqv:Agent ;
+    rdfs:label "group 13" .
+
+ex:refinement-0 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <ub77bL116C17> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/r2rml.ttl#RecipesMap> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-0 .
+
+ex:refinement-1 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://www.w3.org/2006/time#GeneralDurationDescription> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/r2rml.ttl#StepDurationMap> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-1 .
+
+ex:refinement-2 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <ub78bL116C17> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/r2rml.ttl#StepMap> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-2 .
+
+<r2rml.ttl> a mqv:MappingDocument ;
+    mqv:createdBy ex:group13 ;
+    mqv:mappingComplexity "Medium" .
+
+ex:violation-0 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap5" ;
+    mqv:hasValue recipes:hasIngredientWithQuantity ;
+    mqv:inTripleMap <#RecipesMap> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-0 .
+
+ex:violation-1 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue time:seconds ;
+    mqv:inTripleMap <#StepDurationMap> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-1 .
+
+ex:violation-2 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue recipes:hasIngredientWithQuantity ;
+    mqv:inTripleMap <#StepMap> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-2 .
+

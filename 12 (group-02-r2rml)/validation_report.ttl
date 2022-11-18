@@ -1,0 +1,649 @@
+@prefix ex: <http://example.org/> .
+@prefix mqv: <http://mappingQualityVocabulary.org/> .
+@prefix openfit: <http://ontology.openfit.org#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:mappingQualityAssessment a mqv:MappingAssessment ;
+    mqv:assessedMapping <openfit-mapping.ttl> .
+    
+<openfit-mapping.ttl> a mqv:MappingDocument ;
+    mqv:createdBy ex:group02  ;
+    mqv:mappingComplexity "Medium".
+ 
+ex:group02 a mqv:Agent ;
+    rdfs:label "group 02" .
+
+ex:mappingValidationReport a mqv:MappingValidationReport ;
+    mqv:hasViolation ex:violation-0,
+        ex:violation-1,
+        ex:violation-10,
+        ex:violation-11,
+        ex:violation-12,
+        ex:violation-13,
+        ex:violation-14,
+        ex:violation-15,
+        ex:violation-16,
+        ex:violation-17,
+        ex:violation-18,
+        ex:violation-19,
+        ex:violation-2,
+        ex:violation-20,
+        ex:violation-21,
+        ex:violation-22,
+        ex:violation-23,
+        ex:violation-24,
+        ex:violation-25,
+        ex:violation-26,
+        ex:violation-27,
+        ex:violation-3,
+        ex:violation-4,
+        ex:violation-5,
+        ex:violation-6,
+        ex:violation-7,
+        ex:violation-8,
+        ex:violation-9 .
+
+ex:refinement-0 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://ontology.openfit.org#has_target_area> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub3bL268C24").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-0 .
+
+ex:refinement-1 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://ontology.openfit.org#has_target_muscle> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub3bL246C24").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-1 .
+
+ex:refinement-10 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.openfit.org#Strength_Exercise> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/openfit-mapping.ttl#StrengthExercise> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-19 .
+
+ex:refinement-11 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.openfit.org#Target_Muscle> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/openfit-mapping.ttl#TargetMuscle> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-2 .
+
+ex:refinement-12 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.openfit.org#Strength_Exercise> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/openfit-mapping.ttl#StrengthExercise> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-20 .
+
+ex:refinement-13 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://ontology.openfit.org#avg_calories_burnt> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub3bL117C24").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-21 .
+
+ex:refinement-14 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://ontology.openfit.org#consists_of> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub3bL109C24").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-22 .
+
+ex:refinement-15 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.openfit.org#Exercise> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/openfit-mapping.ttl#Session> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-23 .
+
+ex:refinement-16 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://ontology.openfit.org#description> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub3bL60C24").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-24 .
+
+ex:refinement-17 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+            DELETE {
+                ?subject rr:class <http://ontology.openfit.org#WeightLoss> . 
+            }
+            INSERT {
+                ?subject rr:class <http://ontology.openfit.org#Weigth_Loss> 
+            }
+            WHERE {
+                <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/openfit-mapping.ttl#WeightLoss> rr:subjectMap ?subject .
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-25 .
+
+ex:refinement-18 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://ontology.openfit.org#weight> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub3bL74C24").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-26 .
+
+ex:refinement-19 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.openfit.org#Weigth_Loss> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/openfit-mapping.ttl#WeightLoss> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-27 .
+
+ex:refinement-2 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://ontology.openfit.org#consists_of> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub3bL149C24").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-10 .
+
+ex:refinement-20 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+            DELETE {
+                ?subject rr:class <http://ontology.openfit.org#MuscleGain> . 
+            }
+            INSERT {
+                ?subject rr:class <http://ontology.openfit.org#Muscle_Gain> 
+            }
+            WHERE {
+                <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/openfit-mapping.ttl#MuscleGain> rr:subjectMap ?subject .
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-3 .
+
+ex:refinement-21 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://ontology.openfit.org#has_target_muscle> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub3bL33C24").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-4 .
+
+ex:refinement-22 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.openfit.org#Muscle_Gain> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/openfit-mapping.ttl#MuscleGain> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-5 .
+
+ex:refinement-23 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+            DELETE {
+                ?subject rr:class <http://ontology.openfit.org#CardioExercise> . 
+            }
+            INSERT {
+                ?subject rr:class <http://ontology.openfit.org#Cardio_Exercise> 
+            }
+            WHERE {
+                <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/openfit-mapping.ttl#CardioExercise> rr:subjectMap ?subject .
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-6 .
+
+ex:refinement-24 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://ontology.openfit.org#avg_calories_burnt> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub3bL224C24").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-7 .
+
+ex:refinement-25 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.openfit.org#Cardio_Exercise> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/openfit-mapping.ttl#CardioExercise> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-8 .
+
+ex:refinement-26 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://ontology.openfit.org#avg_calories_burnt> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub3bL157C24").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-9 .
+
+ex:refinement-3 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.openfit.org#Exercise> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/openfit-mapping.ttl#Exercise> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-12 .
+
+ex:refinement-4 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            INSERT {
+                ?subject rr:class <http://ontology.openfit.org#Exercise> .
+            }
+            WHERE {
+              <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/openfit-mapping.ttl#Exercise> rr:subjectMap ?subject
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-13 .
+
+ex:refinement-5 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://ontology.openfit.org#has_goal> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub3bL14C27").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-14 .
+
+ex:refinement-6 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://ontology.openfit.org#description> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub3bL19C27").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-15 .
+
+ex:refinement-7 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+            PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+            DELETE {
+                ?subject rr:class <http://ontology.openfit.org#StrengthExercise> . 
+            }
+            INSERT {
+                ?subject rr:class <http://ontology.openfit.org#Strength_Exercise> 
+            }
+            WHERE {
+                <file:///home/alex/Desktop/Mapping-Quality-Framework/Mapping-Quality-Model/static/uploads/openfit-mapping.ttl#StrengthExercise> rr:subjectMap ?subject .
+            }
+            """ ;
+    mqv:refinedViolation ex:violation-16 .
+
+ex:refinement-8 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://ontology.openfit.org#repetitions> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub3bL190C24").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-17 .
+
+ex:refinement-9 a mqv:MappingRefinement ;
+    mqv:hasRefinementQuery """
+                PREFIX rr: <http://www.w3.org/ns/r2rml#> 
+                DELETE {
+                    ?pom rr:predicate ?oldPredicate . 
+                }
+                INSERT {
+                    ?pom rr:predicate <http://ontology.openfit.org#weight> . 
+                }
+                WHERE {
+                    ?pom rr:predicate ?oldPredicate .
+                    FILTER(str(?pom) = "ub3bL195C24").
+                }
+                """ ;
+    mqv:refinedViolation ex:violation-18 .
+
+    
+ex:violation-0 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue openfit:target_area_id ;
+    mqv:inTripleMap <#TargetArea> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-0 .
+
+ex:violation-1 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue openfit:target_muscle_id ;
+    mqv:inTripleMap <#TargetMuscle> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-1 .
+
+ex:violation-10 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue openfit:exercise_id ;
+    mqv:inTripleMap <#Exercise> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-2 .
+
+ex:violation-12 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap4" ;
+    mqv:hasValue openfit:name ;
+    mqv:inTripleMap <#Exercise> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-3 .
+
+ex:violation-13 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap5" ;
+    mqv:hasValue openfit:has_goal ;
+    mqv:inTripleMap <#Exercise> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-4 .
+
+ex:violation-14 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue openfit:goal_id ;
+    mqv:inTripleMap <#Goal> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-5 .
+
+ex:violation-15 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap2" ;
+    mqv:hasValue openfit:descriptions ;
+    mqv:inTripleMap <#Goal> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-6 .
+
+ex:violation-16 a mqv:MappingViolation ;
+    mqv:hasLocation "subjectMap1" ;
+    mqv:hasValue openfit:StrengthExercise ;
+    mqv:inTripleMap <#StrengthExercise> ;
+    mqv:isDescribedBy mqv:metricD1 ;
+    mqv:resultMessage "Usage of undefined Class." ;
+    mqv:wasRefinedBy ex:refinement-7 .
+
+ex:violation-17 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue openfit:strength_id ;
+    mqv:inTripleMap <#StrengthExercise> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-8 .
+
+ex:violation-18 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap2" ;
+    mqv:hasValue openfit:weigth ;
+    mqv:inTripleMap <#StrengthExercise> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-9 .
+
+ex:violation-19 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap3" ;
+    mqv:hasValue openfit:sets ;
+    mqv:inTripleMap <#StrengthExercise> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-10 .
+
+ex:violation-2 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap2" ;
+    mqv:hasValue openfit:name ;
+    mqv:inTripleMap <#TargetMuscle> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-11 .
+
+ex:violation-20 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap4" ;
+    mqv:hasValue openfit:repetitions ;
+    mqv:inTripleMap <#StrengthExercise> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-12 .
+
+ex:violation-21 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap3" ;
+    mqv:hasValue openfit:avg_cals ;
+    mqv:inTripleMap <#Session> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-13 .
+
+ex:violation-22 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue openfit:session_id ;
+    mqv:inTripleMap <#Session> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-14 .
+
+ex:violation-23 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap2" ;
+    mqv:hasValue openfit:description ;
+    mqv:inTripleMap <#Session> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-15 .
+
+ex:violation-24 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue openfit:conditioning_id ;
+    mqv:inTripleMap <#Conditioning> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-16 .
+
+ex:violation-25 a mqv:MappingViolation ;
+    mqv:hasLocation "subjectMap1" ;
+    mqv:hasValue openfit:WeightLoss ;
+    mqv:inTripleMap <#WeightLoss> ;
+    mqv:isDescribedBy mqv:metricD1 ;
+    mqv:resultMessage "Usage of undefined Class." ;
+    mqv:wasRefinedBy ex:refinement-17 .
+
+ex:violation-26 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue openfit:weight_loss_id ;
+    mqv:inTripleMap <#WeightLoss> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-18 .
+
+ex:violation-27 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap2" ;
+    mqv:hasValue openfit:has_target_area ;
+    mqv:inTripleMap <#WeightLoss> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-19 .
+
+ex:violation-3 a mqv:MappingViolation ;
+    mqv:hasLocation "subjectMap1" ;
+    mqv:hasValue openfit:MuscleGain ;
+    mqv:inTripleMap <#MuscleGain> ;
+    mqv:isDescribedBy mqv:metricD1 ;
+    mqv:resultMessage "Usage of undefined Class." ;
+    mqv:wasRefinedBy ex:refinement-20 .
+
+ex:violation-4 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue openfit:muscle_gain_id ;
+    mqv:inTripleMap <#MuscleGain> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-21 .
+
+ex:violation-5 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap2" ;
+    mqv:hasValue openfit:has_target_muscle ;
+    mqv:inTripleMap <#MuscleGain> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-22 .
+
+ex:violation-6 a mqv:MappingViolation ;
+    mqv:hasLocation "subjectMap1" ;
+    mqv:hasValue openfit:CardioExercise ;
+    mqv:inTripleMap <#CardioExercise> ;
+    mqv:isDescribedBy mqv:metricD1 ;
+    mqv:resultMessage "Usage of undefined Class." ;
+    mqv:wasRefinedBy ex:refinement-23 .
+
+ex:violation-7 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue openfit:cardio_id ;
+    mqv:inTripleMap <#CardioExercise> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-24 .
+
+ex:violation-8 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap2" ;
+    mqv:hasValue openfit:duration ;
+    mqv:inTripleMap <#CardioExercise> ;
+    mqv:isDescribedBy mqv:metricD3 ;
+    mqv:resultMessage "Usage of incorrect domain." ;
+    mqv:wasRefinedBy ex:refinement-25 .
+
+ex:violation-9 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap3" ;
+    mqv:hasValue openfit:avg_cals ;
+    mqv:inTripleMap <#Exercise> ;
+    mqv:isDescribedBy mqv:metricD2 ;
+    mqv:resultMessage "Usage of undefined Property." ;
+    mqv:wasRefinedBy ex:refinement-26 .
+

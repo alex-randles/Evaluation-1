@@ -1,0 +1,396 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ofri: <http://openfridge.eu/ontology#> .
+
+### Recipes
+###########
+<#MealTypeTriplesMap>
+    a rr:TriplesMap ;
+    rr:logicalTable [ 
+        rr:sqlQuery """
+            SELECT 
+                REPLACE(LOWER(name), ' ', '_') as name,
+                name as text,
+                description
+            FROM meal_type
+        """
+    ] ;
+
+    rr:subjectMap [
+        rr:template "MealType/{name}" ;
+        rr:class ofri:MealType
+    ] ;
+
+    # ofri:name (default)
+    rr:predicateObjectMap [
+        rr:predicate ofri:name ;
+
+        rr:objectMap [
+            rr:column "text" ;
+        ]
+    ] ;
+
+    # ofri:name @en
+    rr:predicateObjectMap [
+        rr:predicate ofri:name ;
+
+        rr:objectMap [
+            rr:column "text" ;
+            rr:language "en"
+        ]
+    ] ;
+
+    # rdfs:label (default)
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label ;
+
+        rr:objectMap [
+            rr:column "text" ;
+        ]
+    ] ;
+
+    # rdfs:label @en
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label ;
+
+        rr:objectMap [
+            rr:column "text" ;
+            rr:language "en"
+        ]
+    ] ;
+
+    # foaf:name (default)
+    rr:predicateObjectMap [
+        rr:predicate foaf:name ;
+
+        rr:objectMap [
+            rr:column "text" ;
+        ]
+    ] ;
+
+    # foaf:name @en
+    rr:predicateObjectMap [
+        rr:predicate foaf:name ;
+
+        rr:objectMap [
+            rr:column "text" ;
+            rr:language "en"
+        ]
+    ] ;
+
+    # description (default)
+    rr:predicateObjectMap [
+        rr:predicate ofri:description ;
+        rr:objectMap [ 
+            rr:column "description" ;
+        ]
+    ] ;
+
+    # description @en
+    rr:predicateObjectMap [
+        rr:predicate ofri:description ;
+        rr:objectMap [ 
+            rr:column "description" ;
+            rr:language "en"
+        ]
+    ] ;
+.
+
+### Ingredients
+###############
+<#AllergenTriplesMap>
+    a rr:TriplesMap ;
+    rr:logicalTable [ 
+        rr:sqlQuery """
+            SELECT 
+                REPLACE(LOWER(name), ' ', '_') as name,
+                name as text,
+                description
+            FROM allergen
+        """
+    ] ;
+
+    rr:subjectMap [
+        rr:template "Allergen/{name}" ;
+        rr:class ofri:Allergen
+    ] ;
+
+    # ofri:name (default)
+    rr:predicateObjectMap [
+        rr:predicate ofri:name ;
+
+        rr:objectMap [
+            rr:column "text" ;
+        ]
+    ] ;
+
+    # ofri:name @en
+    rr:predicateObjectMap [
+        rr:predicate ofri:name ;
+
+        rr:objectMap [
+            rr:column "text" ;
+            rr:language "en"
+        ]
+    ] ;
+
+    # rdfs:label (default)
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label ;
+
+        rr:objectMap [
+            rr:column "text" ;
+        ]
+    ] ;
+
+    # rdfs:label @en
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label ;
+
+        rr:objectMap [
+            rr:column "text" ;
+            rr:language "en"
+        ]
+    ] ;
+
+    # foaf:name (defaul)
+    rr:predicateObjectMap [
+        rr:predicate foaf:name ;
+
+        rr:objectMap [
+            rr:column "text" ;
+        ]
+    ] ;
+
+    # foaf:name @en
+    rr:predicateObjectMap [
+        rr:predicate foaf:name ;
+
+        rr:objectMap [
+            rr:column "text" ;
+            rr:language "en"
+        ]
+    ] ;
+
+    # description (default)
+    rr:predicateObjectMap [
+        rr:predicate ofri:description ;
+        rr:objectMap [ 
+            rr:column "description" ;
+        ]
+    ] ;
+
+    # description @en
+    rr:predicateObjectMap [
+        rr:predicate ofri:description ;
+        rr:objectMap [ 
+            rr:column "description" ;
+            rr:language "en"
+        ]
+    ] ;
+.
+
+<#IngredientCategoryTriplesMap>
+    a rr:TriplesMap ;
+    rr:logicalTable [ 
+        rr:sqlQuery """
+            SELECT 
+                REPLACE(LOWER(name), ' ', '_') as name,
+                name as text,
+                description
+            FROM ingredient_category
+        """
+    ] ;
+
+    rr:subjectMap [
+        rr:template "IngredientCategory/{name}" ;
+        rr:class ofri:IngredientCategory
+    ] ;
+
+    # ofri:name (default)
+    rr:predicateObjectMap [
+        rr:predicate ofri:name ;
+
+        rr:objectMap [
+            rr:column "text" ;
+        ]
+    ] ;
+
+    # ofri:name @en
+    rr:predicateObjectMap [
+        rr:predicate ofri:name ;
+
+        rr:objectMap [
+            rr:column "text" ;
+            rr:language "en"
+        ]
+    ] ;
+
+    # rdfs:label (default)
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label ;
+
+        rr:objectMap [
+            rr:column "text" ;
+        ]
+    ] ;
+
+    # rdfs:label @en
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label ;
+
+        rr:objectMap [
+            rr:column "text" ;
+            rr:language "en"
+        ]
+    ] ;
+
+    # foaf:name (default)
+    rr:predicateObjectMap [
+        rr:predicate foaf:name ;
+
+        rr:objectMap [
+            rr:column "text" ;
+        ]
+    ] ;
+
+    # foaf:name @en
+    rr:predicateObjectMap [
+        rr:predicate foaf:name ;
+
+        rr:objectMap [
+            rr:column "text" ;
+            rr:language "en"
+        ]
+    ] ;
+
+    # description (default)
+    rr:predicateObjectMap [
+        rr:predicate ofri:description ;
+        rr:objectMap [ 
+            rr:column "description" ;
+        ]
+    ] ;
+
+    # description @en
+    rr:predicateObjectMap [
+        rr:predicate ofri:description ;
+        rr:objectMap [ 
+            rr:column "description" ;
+            rr:language "en"
+        ]
+    ] ;
+.
+
+### Stores
+##########
+<#DayOfWeekTriplesMap> # verplaats naar andere mapping
+    a rr:TriplesMap ;
+    rr:logicalTable [
+        rr:sqlQuery """
+            SELECT 
+                REPLACE(LOWER(name), ' ', '_') as name,
+                name as text,
+                translation,
+                language_key as language
+            FROM day_of_week
+            LEFT OUTER JOIN translation on day_of_week.name = translation.key
+            WHERE language_key = 'nl'
+        """
+    ] ;
+
+    rr:subjectMap [
+        rr:template "DayOfWeek/{name}" ;
+        rr:class ofri:DayOfWeek
+    ] ;
+    
+    # ofri:name (default)
+    rr:predicateObjectMap [
+        rr:predicate ofri:name ;
+
+        rr:objectMap [
+            rr:column "text" ;
+        ]
+    ] ;
+
+    # ofri:name @en
+    rr:predicateObjectMap [
+        rr:predicate ofri:name ;
+
+        rr:objectMap [
+            rr:column "text" ;
+            rr:language "en"
+        ]
+    ] ;
+
+    # ofri:name @nl
+    rr:predicateObjectMap [
+        rr:predicate ofri:name ;
+
+        rr:objectMap [
+            rr:column "translation" ;
+            rr:language "nl"
+        ]
+    ] ;
+
+    # rdfs:label (default)
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label ;
+
+        rr:objectMap [
+            rr:column "text" ;
+        ]
+    ] ;
+
+    # rdfs:label @en
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label ;
+
+        rr:objectMap [
+            rr:column "text" ;
+            rr:language "en"
+        ]
+    ] ;
+
+    # rdfs:label @nl
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label ;
+
+        rr:objectMap [
+            rr:column "translation" ;
+            rr:language "nl"
+        ]
+    ] ;
+
+    # foaf:name (default)
+    rr:predicateObjectMap [
+        rr:predicate foaf:name ;
+
+        rr:objectMap [
+            rr:column "text" ;
+        ]
+    ] ;
+
+    # foaf:name @en
+    rr:predicateObjectMap [
+        rr:predicate foaf:name ;
+
+        rr:objectMap [
+            rr:column "text" ;
+            rr:language "en"
+        ]
+    ] ;
+
+    # foaf:name @nl
+    rr:predicateObjectMap [
+        rr:predicate foaf:name ;
+
+        rr:objectMap [
+            rr:column "translation" ;
+            rr:language "nl"
+        ]
+    ] ;
+
+.

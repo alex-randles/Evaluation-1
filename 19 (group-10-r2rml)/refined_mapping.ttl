@@ -1,0 +1,256 @@
+@prefix xml: <http://www.w3.org/XML/1998/namespace> . 
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> . 
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . 
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> . 
+@prefix rr: <http://www.w3.org/ns/r2rml#> . 
+@prefix flavourtown: <http://www.semanticweb.org/FlavourTown#> . 
+
+	
+<#Recipes>	
+ rdf:type  rr:TriplesMap ;	
+	
+ rr:logicalTable [ 	
+ 	 rr:tableName  "Recipe" ;	
+ ];	
+	
+ rr:subjectMap [ 	
+ 	 rr:template  "http://www.semanticweb.org/FlavourTown#recipe_{name}" ;	
+	 rr:class  flavourtown:Recipe ;	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  flavourtown:recipe_serves ;	
+	 rr:objectMap  [	
+		 rr:column  "serves" ;	
+		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  flavourtown:recipe_name ;	
+	 rr:objectMap  [	
+		 rr:column  "name" ;	
+		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  flavourtown:belongs_to ;	
+	 rr:objectMap  [	
+		 rr:parentTriplesMap  <#Cuisines> ;	
+		 rr:joinCondition  [	
+			 rr:parent  "id" ;	
+			 rr:child  "cuisine" ;	
+			 ];	
+ 		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  flavourtown:has_ingredient ;	
+	 rr:objectMap  [	
+		 rr:parentTriplesMap  <#IngredientRelations> ;	
+		 rr:joinCondition  [	
+			 rr:parent  "recipe" ;	
+			 rr:child  "id" ;	
+			 ];	
+ 		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  flavourtown:consists_of ;	
+	 rr:objectMap  [	
+		 rr:parentTriplesMap  <#PreparationSteps> ;	
+		 rr:joinCondition  [	
+			 rr:parent  "recipe" ;	
+			 rr:child  "id" ;	
+			 ];	
+ 		]; 	
+ ];	
+.	
+	
+<#PreparationSteps>	
+ rdf:type  rr:TriplesMap ;	
+	
+ rr:logicalTable [ 	
+ 	 rr:sqlQuery  "SELECT Preparation_Step.id,Preparation_Step.recipe,Preparation_Step.step_number,Preparation_Step.instruction, Recipe.name FROM Preparation_Step JOIN Recipe ON (Preparation_Step.recipe = Recipe.id)" ;	
+ ];	
+	
+ rr:subjectMap [ 	
+ 	 rr:class  flavourtown:PreparationStep ;	
+	 rr:template  "http://www.semanticweb.org/FlavourTown#preparationstep_{name}_{step_number}" ;	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  flavourtown:step_number ;	
+	 rr:objectMap  [	
+		 rr:column  "step_number" ;	
+		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  flavourtown:instruction_set ;	
+	 rr:objectMap  [	
+		 rr:column  "instruction" ;	
+		]; 	
+ ];	
+.	
+	
+<#IngredientRelations>	
+ rdf:type  rr:TriplesMap ;	
+	
+ rr:logicalTable [ 	
+ 	 rr:tableName  "Ingredient_Relation" ;	
+ ];	
+	
+ rr:subjectMap [ 	
+ 	 rr:template  "http://www.semanticweb.org/IngredientTown#ingredientrelation_{id}" ;	
+	 rr:class  flavourtown:IngredientRelation ;	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  flavourtown:amount ;	
+	 rr:objectMap  [	
+		 rr:column  "amount" ;	
+		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  flavourtown:provides_ingredient ;	
+	 rr:objectMap  [	
+		 rr:parentTriplesMap  <#Ingredients> ;	
+		 rr:joinCondition  [	
+			 rr:parent  "id" ;	
+			 rr:child  "ingredient" ;	
+			 ];	
+ 		]; 	
+ ];	
+.	
+	
+<#Flavours>	
+ rdf:type  rr:TriplesMap ;	
+	
+ rr:logicalTable [ 	
+ 	 rr:tableName  "Flavour" ;	
+ ];	
+	
+ rr:subjectMap [ 	
+ 	 rr:template  "http://www.semanticweb.org/FlavourTown#flavour_{name}" ;	
+	 rr:class  flavourtown:Flavour ;	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  flavourtown:flavour_name ;	
+	 rr:objectMap  [	
+		 rr:column  "name" ;	
+		]; 	
+ ];	
+.	
+	
+<#Ingredients>	
+ rdf:type  rr:TriplesMap ;	
+	
+ rr:logicalTable [ 	
+ 	 rr:tableName  "Ingredient" ;	
+ ];	
+	
+ rr:subjectMap [ 	
+ 	 rr:class  flavourtown:ingredient ;	
+	 rr:class  flavourtown:Ingredient ;	
+	 rr:template  "http://www.semanticweb.org/FlavourTown#ingredient_{name}" ;	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  flavourtown:Ingredient_name ;	
+	 rr:objectMap  [	
+		 rr:column  "name" ;	
+		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  flavourtown:calories ;	
+	 rr:objectMap  [	
+		 rr:column  "calories" ;	
+		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  flavourtown:carbohydrates ;	
+	 rr:objectMap  [	
+		 rr:column  "carbs" ;	
+		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  flavourtown:protein ;	
+	 rr:objectMap  [	
+		 rr:column  "protein" ;	
+		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  flavourtown:fat ;	
+	 rr:objectMap  [	
+		 rr:column  "fat" ;	
+		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  flavourtown:tastes_like ;	
+	 rr:objectMap  [	
+		 rr:parentTriplesMap  <#FlavourRelations> ;	
+		 rr:joinCondition  [	
+			 rr:parent  "ingredient" ;	
+			 rr:child  "id" ;	
+			 ];	
+ 		]; 	
+ ];	
+.	
+	
+<#FlavourRelations>	
+ rdf:type  rr:TriplesMap ;	
+	
+ rr:logicalTable [ 	
+ 	 rr:tableName  "Flavour_Relation" ;	
+ ];	
+	
+ rr:subjectMap [ 	
+ 	 rr:template  "http://www.semanticweb.org/FlavourTown#flavourrelation_{id}" ;	
+	 rr:class  flavourtown:FlavourRelation ;	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  flavourtown:intensity ;	
+	 rr:objectMap  [	
+		 rr:column  "intensity" ;	
+		]; 	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  flavourtown:provides_flavour ;	
+	 rr:objectMap  [	
+		 rr:parentTriplesMap  <#Flavours> ;	
+		 rr:joinCondition  [	
+			 rr:child  "flavour" ;	
+			 rr:parent  "id" ;	
+			 ];	
+ 		]; 	
+ ];	
+.	
+	
+<#Cuisines>	
+ rdf:type  rr:TriplesMap ;	
+	
+ rr:logicalTable [ 	
+ 	 rr:tableName  "Cuisine" ;	
+ ];	
+	
+ rr:subjectMap [ 	
+ 	 rr:template  "http://www.semanticweb.org/FlavourTown#cuisine_{name}" ;	
+	 rr:class  flavourtown:Cuisine ;	
+ ];	
+	
+ rr:predicateObjectMap [ 	
+ 	 rr:predicate  flavourtown:cuisine_name ;	
+	 rr:objectMap  [	
+		 rr:column  "name" ;	
+		]; 	
+ ];	
+.	
