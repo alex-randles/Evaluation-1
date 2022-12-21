@@ -1,0 +1,20 @@
+@prefix ex: <http://example.org/> .
+@prefix foaf: <http://xmlns.com/foaf/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix mqv: <http://mappingQualityVocabulary.org/> .
+@prefix opengis: <http://www.opengis.net/ont/geosparql#> .
+@prefix or: <http://ois.vub.ac.be/foodprint/ontology/routes#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix recipes: <http://ois.vub.ac.be/foodprint/ontology/recipes#> .
+@prefix ro: <http://ois.vub.ac.be/foodprint/routes#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:mappingQualityAssessment a mqv:MappingAssessment ;
+    mqv:assessedMapping <mappingDAQobservation_2nd_Dump.ttl> .
+
+
+

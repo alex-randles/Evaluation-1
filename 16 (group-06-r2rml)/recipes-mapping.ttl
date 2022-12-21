@@ -1,10 +1,10 @@
 # This is the vocabulary for creating R2RML
 @prefix rr: <http://www.w3.org/ns/r2rml#> .
 
-@prefix foaf: <http://xmlns.com/foaf/0.1/>
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#>
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-@prefix country: <http://eulersharp.sourceforge.net/2003/03swap/countries#>
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix country: <http://eulersharp.sourceforge.net/2003/03swap/countries#> .
 
 # This is the vocabulary of our ontology
 @prefix recipes: <http://ontology.wearehungry.be#> .

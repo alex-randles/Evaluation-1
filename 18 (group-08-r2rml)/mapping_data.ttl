@@ -6,8 +6,8 @@
 @prefix ofri: <http://openfridge.eu/ontology#> .
 
 # connection to dbpedia
-@prefix voc: <http://open.vocab.org/terms/>
-@prefix db: <http://dbpedia.org/resource/>
+@prefix voc: <http://open.vocab.org/terms/> .
+@prefix db: <http://dbpedia.org/resource/> .
 
 ### Recipes
 ###########
