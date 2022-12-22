@@ -14,7 +14,7 @@ row_cells = table.add_row().cells
 row_cells[0].text = "#"
 row_cells[1].text = "Source"
 row_cells[2].text = "Total Issues"
-row_cells[3].text = "Metric Descriptions"
+row_cells[3].text = "Issue Descriptions"
 row_cells[4].text = "Mapping"
 row_cells[5].text = "Report"
 

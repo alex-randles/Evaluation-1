@@ -1,0 +1,114 @@
+@prefix ex: <http://example.org/> .
+@prefix mqv: <https://alex-randles.github.io/MQV/#> .
+@prefix mqv-metric: <https://alex-randles.github.io/MQV-METRICS/#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix workouts: <http://data.virtualworkout.com/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:mappingQualityAssessment a mqv:MappingAssessment ;
+    mqv:assessedMapping <workouts-mapping.ttl> .
+
+ex:mappingValidationReport-1671667621 a mqv:MappingValidationReport ;
+    rdfs:comment "A timestamp is appended to the validation report IRI for uniqueness." ;
+    mqv:hasViolation ex:violation-1671667621-0,
+        ex:violation-1671667621-1,
+        ex:violation-1671667621-10,
+        ex:violation-1671667621-2,
+        ex:violation-1671667621-3,
+        ex:violation-1671667621-4,
+        ex:violation-1671667621-5,
+        ex:violation-1671667621-6,
+        ex:violation-1671667621-7,
+        ex:violation-1671667621-8,
+        ex:violation-1671667621-9 .
+
+ex:VOC1 a mqv-metric:VOC1 .
+
+ex:violation-1671667621-0 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue workouts:causesInjuries ;
+    mqv:inTripleMap <#CausesInjury> ;
+    mqv:isDescribedBy ex:D3 ;
+    mqv:resultMessage "Usage of incorrect domain."^^xsd:string .
+
+ex:violation-1671667621-1 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap5" ;
+    mqv:hasValue workouts:duration ;
+    mqv:inTripleMap <#CardioWorkouts> ;
+    mqv:isDescribedBy ex:D7 ;
+    mqv:resultMessage "Usage of incorrect datatype."^^xsd:string .
+
+ex:violation-1671667621-10 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap7" ;
+    mqv:hasValue workouts:duration ;
+    mqv:inTripleMap <#WeightWorkout> ;
+    mqv:isDescribedBy ex:D7 ;
+    mqv:resultMessage "Usage of incorrect datatype."^^xsd:string .
+
+ex:violation-1671667621-2 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap4" ;
+    mqv:hasValue workouts:duration ;
+    mqv:inTripleMap <#Sports> ;
+    mqv:isDescribedBy ex:D7 ;
+    mqv:resultMessage "Usage of incorrect datatype."^^xsd:string .
+
+ex:violation-1671667621-3 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap3" ;
+    mqv:hasValue workouts:repetitions ;
+    mqv:inTripleMap <#FlexibilityWorkouts> ;
+    mqv:isDescribedBy ex:D3 ;
+    mqv:resultMessage "Usage of incorrect domain."^^xsd:string .
+
+ex:violation-1671667621-4 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap6" ;
+    mqv:hasValue workouts:duration ;
+    mqv:inTripleMap <#FlexibilityWorkouts> ;
+    mqv:isDescribedBy ex:D7 ;
+    mqv:resultMessage "Usage of incorrect datatype."^^xsd:string .
+
+ex:violation-1671667621-5 a mqv:MappingViolation ;
+    mqv:hasLocation "subjectMap" ;
+    mqv:hasValue workouts:FlexibilityTraining ;
+    mqv:inTripleMap <#FlexibilityWorkouts> ;
+    mqv:isDescribedBy ex:VOC1 ;
+    mqv:resultMessage "No Human Readable Labelling and Comments."^^xsd:string .
+
+ex:violation-1671667621-6 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap1" ;
+    mqv:hasValue workouts:trains ;
+    mqv:inTripleMap <#TrainsBodyPart> ;
+    mqv:isDescribedBy ex:D3 ;
+    mqv:resultMessage "Usage of incorrect domain."^^xsd:string .
+
+ex:violation-1671667621-7 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap6" ;
+    mqv:hasValue workouts:repetitions ;
+    mqv:inTripleMap <#WeightWorkout> ;
+    mqv:isDescribedBy ex:D3 ;
+    mqv:resultMessage "Usage of incorrect domain."^^xsd:string .
+
+ex:violation-1671667621-8 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap8" ;
+    mqv:hasValue workouts:sets ;
+    mqv:inTripleMap <#WeightWorkout> ;
+    mqv:isDescribedBy ex:D3 ;
+    mqv:resultMessage "Usage of incorrect domain."^^xsd:string .
+
+ex:violation-1671667621-9 a mqv:MappingViolation ;
+    mqv:hasLocation "predicateObjectMap5" ;
+    mqv:hasValue workouts:uses ;
+    mqv:inTripleMap <#WeightWorkout> ;
+    mqv:isDescribedBy ex:D3 ;
+    mqv:resultMessage "Usage of incorrect domain."^^xsd:string .
+
+<workouts-mapping.ttl> a mqv:MappingDocument .
+
+ex:D7 a mqv-metric:D7 .
+
+ex:D3 a mqv-metric:D3 .
+
