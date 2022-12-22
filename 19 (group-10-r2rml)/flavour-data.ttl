@@ -1,0 +1,899 @@
+<http://www.semanticweb.org/FlavourTown#flavourrelation_21>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Bitter> .
+
+<http://www.semanticweb.org/FlavourTown#recipe_Sambar>
+        a       <http://www.semanticweb.org/FlavourTown#Recipe> ;
+        <http://www.semanticweb.org/FlavourTown#belongsTo>
+                <http://www.semanticweb.org/FlavourTown#cuisine_Indian> ;
+        <http://www.semanticweb.org/FlavourTown#consistsOf>
+                <http://www.semanticweb.org/FlavourTown#preparationstep_Sambar_5> , <http://www.semanticweb.org/FlavourTown#preparationstep_Sambar_2> , <http://www.semanticweb.org/FlavourTown#preparationstep_Sambar_7> , <http://www.semanticweb.org/FlavourTown#preparationstep_Sambar_4> , <http://www.semanticweb.org/FlavourTown#preparationstep_Sambar_6> , <http://www.semanticweb.org/FlavourTown#preparationstep_Sambar_1> , <http://www.semanticweb.org/FlavourTown#preparationstep_Sambar_3> ;
+        <http://www.semanticweb.org/FlavourTown#hasIngredient>
+                <http://www.semanticweb.org/IngredientTown#ingredientrelation_10> , <http://www.semanticweb.org/IngredientTown#ingredientrelation_11> , <http://www.semanticweb.org/IngredientTown#ingredientrelation_13> , <http://www.semanticweb.org/IngredientTown#ingredientrelation_7> , <http://www.semanticweb.org/IngredientTown#ingredientrelation_8> , <http://www.semanticweb.org/IngredientTown#ingredientrelation_12> , <http://www.semanticweb.org/IngredientTown#ingredientrelation_1> , <http://www.semanticweb.org/IngredientTown#ingredientrelation_9> , <http://www.semanticweb.org/IngredientTown#ingredientrelation_2> , <http://www.semanticweb.org/IngredientTown#ingredientrelation_3> , <http://www.semanticweb.org/IngredientTown#ingredientrelation_4> , <http://www.semanticweb.org/IngredientTown#ingredientrelation_5> , <http://www.semanticweb.org/IngredientTown#ingredientrelation_6> ;
+        <http://www.semanticweb.org/FlavourTown#recipeName>
+                "Sambar" ;
+        <http://www.semanticweb.org/FlavourTown#recipeServes>
+                "4"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://www.semanticweb.org/FlavourTown#preparationstep_Sambar_4>
+        a       <http://www.semanticweb.org/FlavourTown#preparationStep> ;
+        <http://www.semanticweb.org/FlavourTown#instructionSet>
+                "Simmer and add the potatoes to the lentils. Cook until the potatoes are half cooked. Now add the other vegetables and cook until done." ;
+        <http://www.semanticweb.org/FlavourTown#stepNumber>
+                "4"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://www.semanticweb.org/IngredientTown#ingredientrelation_13>
+        a       <http://www.semanticweb.org/FlavourTown#IngredientRelation> ;
+        <http://www.semanticweb.org/FlavourTown#amount>
+                "5.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#provideIngredient>
+                <http://www.semanticweb.org/FlavourTown#ingredient_Salt> .
+
+<http://www.semanticweb.org/FlavourTown#preparationstep_Tiramisu_2>
+        a       <http://www.semanticweb.org/FlavourTown#preparationStep> ;
+        <http://www.semanticweb.org/FlavourTown#instructionSet>
+                "Spoon cookies in the 15 cl of juice to lightly soak them , they should not turn into porridge! Line the bottom of a small gratin dish or glasses." ;
+        <http://www.semanticweb.org/FlavourTown#stepNumber>
+                "2"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://www.semanticweb.org/FlavourTown#flavour_Sour>
+        a       <http://www.semanticweb.org/FlavourTown#Flavour> ;
+        <http://www.semanticweb.org/FlavourTown#flavourName>
+                "Sour" .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_4>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Bitter> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_34>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Sweet> .
+
+<http://www.semanticweb.org/IngredientTown#ingredientrelation_4>
+        a       <http://www.semanticweb.org/FlavourTown#IngredientRelation> ;
+        <http://www.semanticweb.org/FlavourTown#amount>
+                "125.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#provideIngredient>
+                <http://www.semanticweb.org/FlavourTown#ingredient_Potato> .
+
+<http://www.semanticweb.org/FlavourTown#ingredient_Mascarpone>
+        a       <http://www.semanticweb.org/FlavourTown#ingredient> ;
+        <http://www.semanticweb.org/FlavourTown#calories>
+                "4.34"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#carbohydrates>
+                "0.035"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#fat>
+                "0.03"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#ingredientName>
+                "Mascarpone" ;
+        <http://www.semanticweb.org/FlavourTown#protein>
+                "0.06"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#tastesLike>
+                <http://www.semanticweb.org/FlavourTown#flavourrelation_35> , <http://www.semanticweb.org/FlavourTown#flavourrelation_34> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_19>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "3"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Nutty> .
+
+<http://www.semanticweb.org/FlavourTown#cuisine_Italian>
+        a       <http://www.semanticweb.org/FlavourTown#Cuisine> ;
+        <http://www.semanticweb.org/FlavourTown#cuisineName>
+                "Italian" .
+
+<http://www.semanticweb.org/FlavourTown#ingredient_Tamarind>
+        a       <http://www.semanticweb.org/FlavourTown#ingredient> ;
+        <http://www.semanticweb.org/FlavourTown#calories>
+                "2.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#carbohydrates>
+                "0.62"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#fat>
+                "0.006"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#ingredientName>
+                "Tamarind" ;
+        <http://www.semanticweb.org/FlavourTown#protein>
+                "0.028"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#tastesLike>
+                <http://www.semanticweb.org/FlavourTown#flavourrelation_20> .
+
+<http://www.semanticweb.org/FlavourTown#flavour_Salty>
+        a       <http://www.semanticweb.org/FlavourTown#Flavour> ;
+        <http://www.semanticweb.org/FlavourTown#flavourName>
+                "Salty" .
+
+<http://www.semanticweb.org/IngredientTown#ingredientrelation_20>
+        a       <http://www.semanticweb.org/FlavourTown#IngredientRelation> ;
+        <http://www.semanticweb.org/FlavourTown#amount>
+                "40.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#provideIngredient>
+                <http://www.semanticweb.org/FlavourTown#ingredient_Dark%20Chocolate> .
+
+<http://www.semanticweb.org/FlavourTown#flavour_Bitter>
+        a       <http://www.semanticweb.org/FlavourTown#Flavour> ;
+        <http://www.semanticweb.org/FlavourTown#flavourName>
+                "Bitter" .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_13>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "8"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Earthy> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_26>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "3"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Umami> .
+
+<http://www.semanticweb.org/IngredientTown#ingredientrelation_18>
+        a       <http://www.semanticweb.org/FlavourTown#IngredientRelation> ;
+        <http://www.semanticweb.org/FlavourTown#amount>
+                "250.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#provideIngredient>
+                <http://www.semanticweb.org/FlavourTown#ingredient_Mascarpone> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_9>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "4"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Earthy> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_39>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Sweet> .
+
+<http://www.semanticweb.org/IngredientTown#ingredientrelation_9>
+        a       <http://www.semanticweb.org/FlavourTown#IngredientRelation> ;
+        <http://www.semanticweb.org/FlavourTown#amount>
+                "50.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#provideIngredient>
+                <http://www.semanticweb.org/FlavourTown#ingredient_Tamarind> .
+
+<http://www.semanticweb.org/FlavourTown#preparationstep_Sambar_3>
+        a       <http://www.semanticweb.org/FlavourTown#preparationStep> ;
+        <http://www.semanticweb.org/FlavourTown#instructionSet>
+                "Add this purée to the lentils. Mix well. Add salt to taste." ;
+        <http://www.semanticweb.org/FlavourTown#stepNumber>
+                "3"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_20>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "9"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Sour> .
+
+<http://www.semanticweb.org/IngredientTown#ingredientrelation_12>
+        a       <http://www.semanticweb.org/FlavourTown#IngredientRelation> ;
+        <http://www.semanticweb.org/FlavourTown#amount>
+                "20.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#provideIngredient>
+                <http://www.semanticweb.org/FlavourTown#ingredient_Red%20Chilli> .
+
+<http://www.semanticweb.org/FlavourTown#preparationstep_Tiramisu_1>
+        a       <http://www.semanticweb.org/FlavourTown#preparationStep> ;
+        <http://www.semanticweb.org/FlavourTown#instructionSet>
+                "Squeeze the oranges. Pour 15 cl of juice into a deep plate. Put 7 tablespoons of the remaining juice in a small saucepan and reduce it over medium heat. You can add 2 tablespoons of zest . Reserve ." ;
+        <http://www.semanticweb.org/FlavourTown#stepNumber>
+                "1"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_3>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "6"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Spicy> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_33>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Smoky> .
+
+<http://www.semanticweb.org/FlavourTown#ingredient_Pumpkin>
+        a       <http://www.semanticweb.org/FlavourTown#ingredient> ;
+        <http://www.semanticweb.org/FlavourTown#calories>
+                "0.26"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#carbohydrates>
+                "0.07"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#fat>
+                "0.001"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#ingredientName>
+                "Pumpkin" ;
+        <http://www.semanticweb.org/FlavourTown#protein>
+                "0.01"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#tastesLike>
+                <http://www.semanticweb.org/FlavourTown#flavourrelation_16> , <http://www.semanticweb.org/FlavourTown#flavourrelation_15> .
+
+<http://www.semanticweb.org/FlavourTown#ingredient_Eggplant>
+        a       <http://www.semanticweb.org/FlavourTown#ingredient> ;
+        <http://www.semanticweb.org/FlavourTown#calories>
+                "0.25"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#carbohydrates>
+                "0.06"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#fat>
+                "0.002"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#ingredientName>
+                "Eggplant" ;
+        <http://www.semanticweb.org/FlavourTown#protein>
+                "0.01"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#tastesLike>
+                <http://www.semanticweb.org/FlavourTown#flavourrelation_8> , <http://www.semanticweb.org/FlavourTown#flavourrelation_6> , <http://www.semanticweb.org/FlavourTown#flavourrelation_7> , <http://www.semanticweb.org/FlavourTown#flavourrelation_5> .
+
+<http://www.semanticweb.org/IngredientTown#ingredientrelation_3>
+        a       <http://www.semanticweb.org/FlavourTown#IngredientRelation> ;
+        <http://www.semanticweb.org/FlavourTown#amount>
+                "125.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#provideIngredient>
+                <http://www.semanticweb.org/FlavourTown#ingredient_Eggplant> .
+
+<http://www.semanticweb.org/FlavourTown#ingredient_Okra>
+        a       <http://www.semanticweb.org/FlavourTown#ingredient> ;
+        <http://www.semanticweb.org/FlavourTown#calories>
+                "0.33"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#carbohydrates>
+                "0.07"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#fat>
+                2.0E-4 ;
+        <http://www.semanticweb.org/FlavourTown#ingredientName>
+                "Okra" ;
+        <http://www.semanticweb.org/FlavourTown#protein>
+                "0.019"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#tastesLike>
+                <http://www.semanticweb.org/FlavourTown#flavourrelation_14> , <http://www.semanticweb.org/FlavourTown#flavourrelation_13> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_18>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "9"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Rich> .
+
+<http://www.semanticweb.org/FlavourTown#flavour_Rich>
+        a       <http://www.semanticweb.org/FlavourTown#Flavour> ;
+        <http://www.semanticweb.org/FlavourTown#flavourName>
+                "Rich" .
+
+<http://www.semanticweb.org/FlavourTown#cuisine_Indian>
+        a       <http://www.semanticweb.org/FlavourTown#Cuisine> ;
+        <http://www.semanticweb.org/FlavourTown#cuisineName>
+                "Indian" .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_12>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "4"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Sharp> .
+
+<http://www.semanticweb.org/FlavourTown#flavour_Umami>
+        a       <http://www.semanticweb.org/FlavourTown#Flavour> ;
+        <http://www.semanticweb.org/FlavourTown#flavourName>
+                "Umami" .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_25>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "10"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Salty> .
+
+<http://www.semanticweb.org/IngredientTown#ingredientrelation_17>
+        a       <http://www.semanticweb.org/FlavourTown#IngredientRelation> ;
+        <http://www.semanticweb.org/FlavourTown#amount>
+                "5.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#provideIngredient>
+                <http://www.semanticweb.org/FlavourTown#ingredient_Vanilla%20Extract> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_8>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Acidic> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_38>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Salty> .
+
+<http://www.semanticweb.org/FlavourTown#ingredient_Vanilla%20Extract>
+        a       <http://www.semanticweb.org/FlavourTown#ingredient> ;
+        <http://www.semanticweb.org/FlavourTown#calories>
+                "2.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#carbohydrates>
+                "0.13"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#fat>
+                "0.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#ingredientName>
+                "Vanilla Extract" ;
+        <http://www.semanticweb.org/FlavourTown#protein>
+                "0.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#tastesLike>
+                <http://www.semanticweb.org/FlavourTown#flavourrelation_33> , <http://www.semanticweb.org/FlavourTown#flavourrelation_32> .
+
+<http://www.semanticweb.org/IngredientTown#ingredientrelation_8>
+        a       <http://www.semanticweb.org/FlavourTown#IngredientRelation> ;
+        <http://www.semanticweb.org/FlavourTown#amount>
+                "900.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#provideIngredient>
+                <http://www.semanticweb.org/FlavourTown#ingredient_Chicken%20Drumstick> .
+
+<http://www.semanticweb.org/FlavourTown#recipe_Tiramisu>
+        a       <http://www.semanticweb.org/FlavourTown#Recipe> ;
+        <http://www.semanticweb.org/FlavourTown#belongsTo>
+                <http://www.semanticweb.org/FlavourTown#cuisine_Italian> ;
+        <http://www.semanticweb.org/FlavourTown#consistsOf>
+                <http://www.semanticweb.org/FlavourTown#preparationstep_Tiramisu_5> , <http://www.semanticweb.org/FlavourTown#preparationstep_Tiramisu_3> , <http://www.semanticweb.org/FlavourTown#preparationstep_Tiramisu_4> , <http://www.semanticweb.org/FlavourTown#preparationstep_Tiramisu_1> , <http://www.semanticweb.org/FlavourTown#preparationstep_Tiramisu_2> ;
+        <http://www.semanticweb.org/FlavourTown#hasIngredient>
+                <http://www.semanticweb.org/IngredientTown#ingredientrelation_17> , <http://www.semanticweb.org/IngredientTown#ingredientrelation_16> , <http://www.semanticweb.org/IngredientTown#ingredientrelation_15> , <http://www.semanticweb.org/IngredientTown#ingredientrelation_14> , <http://www.semanticweb.org/IngredientTown#ingredientrelation_19> , <http://www.semanticweb.org/IngredientTown#ingredientrelation_21> , <http://www.semanticweb.org/IngredientTown#ingredientrelation_18> , <http://www.semanticweb.org/IngredientTown#ingredientrelation_20> ;
+        <http://www.semanticweb.org/FlavourTown#recipeName>
+                "Tiramisu" ;
+        <http://www.semanticweb.org/FlavourTown#recipeServes>
+                "5"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://www.semanticweb.org/FlavourTown#preparationstep_Sambar_2>
+        a       <http://www.semanticweb.org/FlavourTown#preparationStep> ;
+        <http://www.semanticweb.org/FlavourTown#instructionSet>
+                "Soak the tamarind in a small bowl of hot water for 10 minutes. Squeeze well to remove all juice." ;
+        <http://www.semanticweb.org/FlavourTown#stepNumber>
+                "2"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://www.semanticweb.org/IngredientTown#ingredientrelation_11>
+        a       <http://www.semanticweb.org/FlavourTown#IngredientRelation> ;
+        <http://www.semanticweb.org/FlavourTown#amount>
+                "7.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#provideIngredient>
+                <http://www.semanticweb.org/FlavourTown#ingredient_Curry%20Leaf> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_2>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "4"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Umami> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_32>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "8"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Sweet> .
+
+<http://www.semanticweb.org/IngredientTown#ingredientrelation_2>
+        a       <http://www.semanticweb.org/FlavourTown#IngredientRelation> ;
+        <http://www.semanticweb.org/FlavourTown#amount>
+                "58.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#provideIngredient>
+                <http://www.semanticweb.org/FlavourTown#ingredient_Sambar%20Masala%20Powder> .
+
+<http://www.semanticweb.org/FlavourTown#ingredient_Ghee>
+        a       <http://www.semanticweb.org/FlavourTown#ingredient> ;
+        <http://www.semanticweb.org/FlavourTown#calories>
+                "9.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#carbohydrates>
+                "0.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#fat>
+                "1.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#ingredientName>
+                "Ghee" ;
+        <http://www.semanticweb.org/FlavourTown#protein>
+                "0.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#tastesLike>
+                <http://www.semanticweb.org/FlavourTown#flavourrelation_19> , <http://www.semanticweb.org/FlavourTown#flavourrelation_18> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_17>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "8"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Umami> .
+
+<http://www.semanticweb.org/FlavourTown#flavour_Sharp>
+        a       <http://www.semanticweb.org/FlavourTown#Flavour> ;
+        <http://www.semanticweb.org/FlavourTown#flavourName>
+                "Sharp" .
+
+<http://www.semanticweb.org/FlavourTown#ingredient_Potato>
+        a       <http://www.semanticweb.org/FlavourTown#ingredient> ;
+        <http://www.semanticweb.org/FlavourTown#calories>
+                "0.77"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#carbohydrates>
+                "0.17"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#fat>
+                "0.001"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#ingredientName>
+                "Potato" ;
+        <http://www.semanticweb.org/FlavourTown#protein>
+                "0.02"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#tastesLike>
+                <http://www.semanticweb.org/FlavourTown#flavourrelation_10> , <http://www.semanticweb.org/FlavourTown#flavourrelation_9> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_11>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "3"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Sweet> .
+
+<http://www.semanticweb.org/FlavourTown#ingredient_Egg>
+        a       <http://www.semanticweb.org/FlavourTown#ingredient> ;
+        <http://www.semanticweb.org/FlavourTown#calories>
+                "1.43"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#carbohydrates>
+                "0.007"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#fat>
+                "0.1"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#ingredientName>
+                "Egg" ;
+        <http://www.semanticweb.org/FlavourTown#protein>
+                "0.13"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#tastesLike>
+                <http://www.semanticweb.org/FlavourTown#flavourrelation_27> , <http://www.semanticweb.org/FlavourTown#flavourrelation_26> .
+
+<http://www.semanticweb.org/FlavourTown#ingredient_Milk>
+        a       <http://www.semanticweb.org/FlavourTown#ingredient> ;
+        <http://www.semanticweb.org/FlavourTown#calories>
+                "0.42"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#carbohydrates>
+                "0.05"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#fat>
+                "0.01"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#ingredientName>
+                "Milk" ;
+        <http://www.semanticweb.org/FlavourTown#protein>
+                "0.034"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#tastesLike>
+                <http://www.semanticweb.org/FlavourTown#flavourrelation_39> , <http://www.semanticweb.org/FlavourTown#flavourrelation_38> .
+
+<http://www.semanticweb.org/FlavourTown#preparationstep_Sambar_7>
+        a       <http://www.semanticweb.org/FlavourTown#preparationStep> ;
+        <http://www.semanticweb.org/FlavourTown#instructionSet>
+                "Garnish and serve hot with Idlis, Vadas or plain boiled rice." ;
+        <http://www.semanticweb.org/FlavourTown#stepNumber>
+                "7"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://www.semanticweb.org/FlavourTown#flavour_Spicy>
+        a       <http://www.semanticweb.org/FlavourTown#Flavour> ;
+        <http://www.semanticweb.org/FlavourTown#flavourName>
+                "Spicy" .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_24>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "10"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Spicy> .
+
+<http://www.semanticweb.org/IngredientTown#ingredientrelation_16>
+        a       <http://www.semanticweb.org/FlavourTown#IngredientRelation> ;
+        <http://www.semanticweb.org/FlavourTown#amount>
+                "50.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#provideIngredient>
+                <http://www.semanticweb.org/FlavourTown#ingredient_Sugar> .
+
+<http://www.semanticweb.org/FlavourTown#preparationstep_Tiramisu_5>
+        a       <http://www.semanticweb.org/FlavourTown#preparationStep> ;
+        <http://www.semanticweb.org/FlavourTown#instructionSet>
+                "Spread half of this orange cream over the chocolate. Then redo a layer of soaked cookies , chocolate and finish with cream. Make the decoration of your choice." ;
+        <http://www.semanticweb.org/FlavourTown#stepNumber>
+                "5"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_7>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Bitter> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_37>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "3"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Bitter> .
+
+<http://www.semanticweb.org/IngredientTown#ingredientrelation_7>
+        a       <http://www.semanticweb.org/FlavourTown#IngredientRelation> ;
+        <http://www.semanticweb.org/FlavourTown#amount>
+                "125.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#provideIngredient>
+                <http://www.semanticweb.org/FlavourTown#ingredient_Pumpkin> .
+
+<http://www.semanticweb.org/FlavourTown#ingredient_Salt>
+        a       <http://www.semanticweb.org/FlavourTown#ingredient> ;
+        <http://www.semanticweb.org/FlavourTown#calories>
+                "0.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#carbohydrates>
+                "0.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#fat>
+                "0.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#ingredientName>
+                "Salt" ;
+        <http://www.semanticweb.org/FlavourTown#protein>
+                "0.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#tastesLike>
+                <http://www.semanticweb.org/FlavourTown#flavourrelation_25> .
+
+<http://www.semanticweb.org/FlavourTown#ingredient_Orange>
+        a       <http://www.semanticweb.org/FlavourTown#ingredient> ;
+        <http://www.semanticweb.org/FlavourTown#calories>
+                "0.47"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#carbohydrates>
+                "0.12"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#fat>
+                "0.001"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#ingredientName>
+                "Orange" ;
+        <http://www.semanticweb.org/FlavourTown#protein>
+                "0.009"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#tastesLike>
+                <http://www.semanticweb.org/FlavourTown#flavourrelation_30> , <http://www.semanticweb.org/FlavourTown#flavourrelation_29> , <http://www.semanticweb.org/FlavourTown#flavourrelation_28> .
+
+<http://www.semanticweb.org/IngredientTown#ingredientrelation_10>
+        a       <http://www.semanticweb.org/FlavourTown#IngredientRelation> ;
+        <http://www.semanticweb.org/FlavourTown#amount>
+                "30.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#provideIngredient>
+                <http://www.semanticweb.org/FlavourTown#ingredient_Ghee> .
+
+<http://www.semanticweb.org/FlavourTown#preparationstep_Sambar_1>
+        a       <http://www.semanticweb.org/FlavourTown#preparationStep> ;
+        <http://www.semanticweb.org/FlavourTown#instructionSet>
+                "Boil the lentils and Sambar Masala with enough water till they are soft. The consistency should be that of a thick soup." ;
+        <http://www.semanticweb.org/FlavourTown#stepNumber>
+                "1"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://www.semanticweb.org/FlavourTown#ingredient_Sambar%20Masala%20Powder>
+        a       <http://www.semanticweb.org/FlavourTown#ingredient> ;
+        <http://www.semanticweb.org/FlavourTown#calories>
+                "0.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#carbohydrates>
+                "0.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#fat>
+                "0.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#ingredientName>
+                "Sambar Masala Powder" ;
+        <http://www.semanticweb.org/FlavourTown#protein>
+                "0.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#tastesLike>
+                <http://www.semanticweb.org/FlavourTown#flavourrelation_4> , <http://www.semanticweb.org/FlavourTown#flavourrelation_3> , <http://www.semanticweb.org/FlavourTown#flavourrelation_2> .
+
+<http://www.semanticweb.org/FlavourTown#ingredient_Sugar>
+        a       <http://www.semanticweb.org/FlavourTown#ingredient> ;
+        <http://www.semanticweb.org/FlavourTown#calories>
+                "38.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#carbohydrates>
+                "1.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#fat>
+                "0.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#ingredientName>
+                "Sugar" ;
+        <http://www.semanticweb.org/FlavourTown#protein>
+                "0.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#tastesLike>
+                <http://www.semanticweb.org/FlavourTown#flavourrelation_31> .
+
+<http://www.semanticweb.org/FlavourTown#ingredient_Onion>
+        a       <http://www.semanticweb.org/FlavourTown#ingredient> ;
+        <http://www.semanticweb.org/FlavourTown#calories>
+                "0.4"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#carbohydrates>
+                "0.09"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#fat>
+                1.0E-4 ;
+        <http://www.semanticweb.org/FlavourTown#ingredientName>
+                "Onion" ;
+        <http://www.semanticweb.org/FlavourTown#protein>
+                "0.011"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#tastesLike>
+                <http://www.semanticweb.org/FlavourTown#flavourrelation_12> , <http://www.semanticweb.org/FlavourTown#flavourrelation_11> .
+
+<http://www.semanticweb.org/FlavourTown#flavour_Acidic>
+        a       <http://www.semanticweb.org/FlavourTown#Flavour> ;
+        <http://www.semanticweb.org/FlavourTown#flavourName>
+                "Acidic" .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_1>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "7"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Nutty> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_31>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "10"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Sweet> .
+
+<http://www.semanticweb.org/FlavourTown#ingredient_Pigeon%20Pea>
+        a       <http://www.semanticweb.org/FlavourTown#ingredient> ;
+        <http://www.semanticweb.org/FlavourTown#calories>
+                "3.43"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#carbohydrates>
+                "0.63"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#fat>
+                "0.015"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#ingredientName>
+                "Pigeon Pea" ;
+        <http://www.semanticweb.org/FlavourTown#protein>
+                "0.22"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#tastesLike>
+                <http://www.semanticweb.org/FlavourTown#flavourrelation_1> .
+
+<http://www.semanticweb.org/IngredientTown#ingredientrelation_1>
+        a       <http://www.semanticweb.org/FlavourTown#IngredientRelation> ;
+        <http://www.semanticweb.org/FlavourTown#amount>
+                "250.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#provideIngredient>
+                <http://www.semanticweb.org/FlavourTown#ingredient_Pigeon%20Pea> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_16>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Umami> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_29>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "4"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Sour> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_10>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Nutty> .
+
+<http://www.semanticweb.org/FlavourTown#preparationstep_Sambar_6>
+        a       <http://www.semanticweb.org/FlavourTown#preparationStep> ;
+        <http://www.semanticweb.org/FlavourTown#instructionSet>
+                "Mix well" ;
+        <http://www.semanticweb.org/FlavourTown#stepNumber>
+                "6"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_23>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Spicy> .
+
+<http://www.semanticweb.org/IngredientTown#ingredientrelation_15>
+        a       <http://www.semanticweb.org/FlavourTown#IngredientRelation> ;
+        <http://www.semanticweb.org/FlavourTown#amount>
+                "250.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#provideIngredient>
+                <http://www.semanticweb.org/FlavourTown#ingredient_Orange> .
+
+<http://www.semanticweb.org/FlavourTown#preparationstep_Tiramisu_4>
+        a       <http://www.semanticweb.org/FlavourTown#preparationStep> ;
+        <http://www.semanticweb.org/FlavourTown#instructionSet>
+                "Separate the whites from the egg yolks. In a bowl, beat the yolks with the sugar and vanilla extract for several minutes using an electric whisk. The mixture should whiten , increase in volume and become frothy. Then add the mascarpone. While whipping . Then add 4 tablespoons of reduced orange juice. At this stage, for an even more chocolatey effect, add 30 g of sifted cocoa powder, mix well. Whisk the egg whites (with 1 pinch of salt) in very firm snow. Gently fold them into the mascarpone." ;
+        <http://www.semanticweb.org/FlavourTown#stepNumber>
+                "4"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_6>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Sweet> .
+
+<http://www.semanticweb.org/FlavourTown#ingredient_Chicken%20Drumstick>
+        a       <http://www.semanticweb.org/FlavourTown#ingredient> ;
+        <http://www.semanticweb.org/FlavourTown#calories>
+                "1.6"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#carbohydrates>
+                "0.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#fat>
+                "0.087"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#ingredientName>
+                "Chicken Drumstick" ;
+        <http://www.semanticweb.org/FlavourTown#protein>
+                "0.19"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#tastesLike>
+                <http://www.semanticweb.org/FlavourTown#flavourrelation_17> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_36>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Sweet> .
+
+<http://www.semanticweb.org/IngredientTown#ingredientrelation_6>
+        a       <http://www.semanticweb.org/FlavourTown#IngredientRelation> ;
+        <http://www.semanticweb.org/FlavourTown#amount>
+                "180.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#provideIngredient>
+                <http://www.semanticweb.org/FlavourTown#ingredient_Okra> .
+
+<http://www.semanticweb.org/FlavourTown#ingredient_Curry%20Leaf>
+        a       <http://www.semanticweb.org/FlavourTown#ingredient> ;
+        <http://www.semanticweb.org/FlavourTown#calories>
+                "0.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#carbohydrates>
+                "0.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#fat>
+                "0.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#ingredientName>
+                "Curry Leaf" ;
+        <http://www.semanticweb.org/FlavourTown#protein>
+                "0.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#tastesLike>
+                <http://www.semanticweb.org/FlavourTown#flavourrelation_23> , <http://www.semanticweb.org/FlavourTown#flavourrelation_22> , <http://www.semanticweb.org/FlavourTown#flavourrelation_21> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_30>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Bitter> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_15>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "5"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Sweet> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_28>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "6"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Sweet> .
+
+<http://www.semanticweb.org/FlavourTown#flavour_Sweet>
+        a       <http://www.semanticweb.org/FlavourTown#Flavour> ;
+        <http://www.semanticweb.org/FlavourTown#flavourName>
+                "Sweet" .
+
+<http://www.semanticweb.org/FlavourTown#preparationstep_Sambar_5>
+        a       <http://www.semanticweb.org/FlavourTown#preparationStep> ;
+        <http://www.semanticweb.org/FlavourTown#instructionSet>
+                "Heat the ghee in a small pan and add the dry red chilies, and curry leaves. Fry until the spluttering stops and add to the boiled lentils." ;
+        <http://www.semanticweb.org/FlavourTown#stepNumber>
+                "5"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_22>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Sour> .
+
+<http://www.semanticweb.org/IngredientTown#ingredientrelation_14>
+        a       <http://www.semanticweb.org/FlavourTown#IngredientRelation> ;
+        <http://www.semanticweb.org/FlavourTown#amount>
+                "150.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#provideIngredient>
+                <http://www.semanticweb.org/FlavourTown#ingredient_Egg> .
+
+<http://www.semanticweb.org/FlavourTown#preparationstep_Tiramisu_3>
+        a       <http://www.semanticweb.org/FlavourTown#preparationStep> ;
+        <http://www.semanticweb.org/FlavourTown#instructionSet>
+                "Break the chocolate squares, add the milk and put in the microwave for a few seconds, time to melt . It may be necessary to add milk, it all depends on the texture: a very flexible chocolate but not too liquid either (more liquid than a ganache). Divide half of this chocolate over the cookies already placed in the pan." ;
+        <http://www.semanticweb.org/FlavourTown#stepNumber>
+                "3"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_5>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "3"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Rich> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_35>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "6"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Rich> .
+
+<http://www.semanticweb.org/IngredientTown#ingredientrelation_5>
+        a       <http://www.semanticweb.org/FlavourTown#IngredientRelation> ;
+        <http://www.semanticweb.org/FlavourTown#amount>
+                "200.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#provideIngredient>
+                <http://www.semanticweb.org/FlavourTown#ingredient_Onion> .
+
+<http://www.semanticweb.org/FlavourTown#ingredient_Dark%20Chocolate>
+        a       <http://www.semanticweb.org/FlavourTown#ingredient> ;
+        <http://www.semanticweb.org/FlavourTown#calories>
+                "6.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#carbohydrates>
+                "0.46"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#fat>
+                "0.43"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#ingredientName>
+                "Dark Chocolate" ;
+        <http://www.semanticweb.org/FlavourTown#protein>
+                "0.07"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#tastesLike>
+                <http://www.semanticweb.org/FlavourTown#flavourrelation_37> , <http://www.semanticweb.org/FlavourTown#flavourrelation_36> .
+
+<http://www.semanticweb.org/IngredientTown#ingredientrelation_21>
+        a       <http://www.semanticweb.org/FlavourTown#IngredientRelation> ;
+        <http://www.semanticweb.org/FlavourTown#amount>
+                "50.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#provideIngredient>
+                <http://www.semanticweb.org/FlavourTown#ingredient_Milk> .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_14>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Sweet> .
+
+<http://www.semanticweb.org/FlavourTown#flavour_Nutty>
+        a       <http://www.semanticweb.org/FlavourTown#Flavour> ;
+        <http://www.semanticweb.org/FlavourTown#flavourName>
+                "Nutty" .
+
+<http://www.semanticweb.org/FlavourTown#flavourrelation_27>
+        a       <http://www.semanticweb.org/FlavourTown#FlavourRelation> ;
+        <http://www.semanticweb.org/FlavourTown#intensity>
+                "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://www.semanticweb.org/FlavourTown#provideFlavour>
+                <http://www.semanticweb.org/FlavourTown#flavour_Sweet> .
+
+<http://www.semanticweb.org/IngredientTown#ingredientrelation_19>
+        a       <http://www.semanticweb.org/FlavourTown#IngredientRelation> ;
+        <http://www.semanticweb.org/FlavourTown#amount>
+                "3.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#provideIngredient>
+                <http://www.semanticweb.org/FlavourTown#ingredient_Salt> .
+
+<http://www.semanticweb.org/FlavourTown#flavour_Smoky>
+        a       <http://www.semanticweb.org/FlavourTown#Flavour> ;
+        <http://www.semanticweb.org/FlavourTown#flavourName>
+                "Smoky" .
+
+<http://www.semanticweb.org/FlavourTown#flavour_Earthy>
+        a       <http://www.semanticweb.org/FlavourTown#Flavour> ;
+        <http://www.semanticweb.org/FlavourTown#flavourName>
+                "Earthy" .
+
+<http://www.semanticweb.org/FlavourTown#ingredient_Red%20Chilli>
+        a       <http://www.semanticweb.org/FlavourTown#ingredient> ;
+        <http://www.semanticweb.org/FlavourTown#calories>
+                "0.4"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#carbohydrates>
+                "0.09"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#fat>
+                "0.004"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#ingredientName>
+                "Red Chilli" ;
+        <http://www.semanticweb.org/FlavourTown#protein>
+                "0.019"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://www.semanticweb.org/FlavourTown#tastesLike>
+                <http://www.semanticweb.org/FlavourTown#flavourrelation_24> .

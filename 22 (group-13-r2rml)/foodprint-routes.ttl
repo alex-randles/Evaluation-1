@@ -1,0 +1,211 @@
+@prefix : <http://ois.vub.ac.be/foodprint/ontology/routes#> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix opengis: <http://www.opengis.net/ont/geosparql#> .
+@base <http://ois.vub.ac.be/foodprint/ontology/routes> .
+
+<http://ois.vub.ac.be/foodprint/ontology/routes> 
+   rdf:type owl:Ontology ;
+   rdfs:label "FoodPrint Routes"@en ;
+   rdfs:description  "An ontology for describing the routes a products travels along, with the purpose of deriving a score coined 'FoodPrint' that describes how big the environmental impact of a certain product is"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://ois.vub.ac.be/foodprint#consistsOfConnections
+:consistsOfConnections rdf:type owl:ObjectProperty ;
+                       rdfs:domain :Route ;
+                       rdfs:range :Connection ;
+                       rdfs:label "route consists of connections"@en ;
+                       rdfs:comment "Defines a connection between two distribution points to be part of a route"@en .
+
+
+###  http://ois.vub.ac.be/foodprint#fromPoint
+:fromPoint rdf:type owl:ObjectProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :Edge ;
+           rdfs:range :DistributionPoint ;
+           rdfs:label "from point"@en ;
+           rdfs:comment "Vertex a in a directed edge a -> b"@en .
+
+
+###  http://ois.vub.ac.be/foodprint#location
+:location rdf:type owl:ObjectProperty ;
+          rdfs:domain :DistributionPoint ;
+          rdfs:range geo:Point ;
+          rdfs:label "location"@en ; 
+          rdfs:comment "The location of a distribution point"@en.
+
+###  http://ois.vub.ac.be/foodprint#ofRoute
+:ofRoute rdf:type owl:ObjectProperty ;
+         rdfs:domain :Reachable ;
+         rdfs:range :Route ;
+         rdfs:label "of route"@en ;
+         rdfs:comment "The route reachable edge belongs to"@en.
+
+:hasReachable rdf:type owl:ObjectProperty ;
+              owl:inverseOf :ofRoute ;
+              rdfs:label "hasReachable"@en ;
+              rdfs:comment "The route has some reachable edges, that can be used to validate the route"@en .
+
+
+###  http://ois.vub.ac.be/foodprint#routeHasEndpoint
+:routeHasEndpoint rdf:type owl:ObjectProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain :Route ;
+                  rdfs:range :Shop ;
+                  rdfs:label "route has endpoint"@en ;
+                  rdfs:comment "Denotes that the given route has the given shop as an endpoint" .
+
+
+###  http://ois.vub.ac.be/foodprint#routeHasStartpoint
+:routeHasStartpoint rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdf:type owl:FunctionalProperty ;
+                    rdfs:domain :Route ;
+                    rdfs:range :DistributionPoint ;
+                    rdfs:label "route has starting point"@en ; 
+                    rdfs:comment "Denotes that the given route has the given distribution point at its origin" . 
+
+
+###  http://ois.vub.ac.be/foodprint#toPoint
+:toPoint rdf:type owl:ObjectProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain :Edge ;
+         rdfs:range :DistributionPoint ;
+         rdfs:label "to point"@en ;
+         rdfs:comment "Vertex b in a direct edge a -> b"@en .
+
+
+###  http://ois.vub.ac.be/foodprint#transportedBy
+:transportedBy rdf:type owl:ObjectProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :Connection ;
+               rdfs:range :TransportMode ;
+               rdfs:label "transported by"@en ;
+               rdfs:comment "A connection has a transport mode, this means that the given transport is used for transporting the product across the given route"@en .
+
+
+###  http://ois.vub.ac.be/foodprint#travelsAlong
+:travelsAlong rdf:type owl:ObjectProperty ;
+              rdfs:domain :Product ;
+              rdfs:range :Route ;
+              rdfs:label "travels along"@en ;
+              rdfs:comment "A product can be transported over multiple routes"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://ois.vub.ac.be/foodprint#footprintPerKm
+:footprintPerKm rdf:type owl:DatatypeProperty ;
+                rdfs:domain :TransportMode ;
+                rdfs:range xsd:int ;
+                rdfs:label "foodprint per km" ;
+                rdfs:comment "Denotes the amount of CO2 that is emitted for each kilometer to mode of transport travels" .
+
+
+:locationWkt   rdf:type owl:DatatypeProperty ;
+               rdfs:domain :DistributionPoint ;
+               rdfs:range opengis:wktLiteral ;
+               rdfs:label "locationWkt" ;
+               rdfs:comment "Denotes the location as WKT (Well Known Text Format) for representing points (eg. POINT(latitude, longitude)" .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://ois.vub.ac.be/foodprint#Connection
+:Connection rdf:type owl:Class ;
+            rdfs:subClassOf :Edge ;
+            rdfs:label "Connection"@en ; 
+            rdfs:comment "A connection between two distribution points"@en .
+
+
+
+###  http://ois.vub.ac.be/foodprint#DistributionPoint
+:DistributionPoint rdf:type owl:Class ;
+                   rdfs:label "Distribution Point" ;
+                   rdfs:comment "A distribution point from which a product can come from, or can travel along" .
+      
+
+
+###  http://ois.vub.ac.be/foodprint#Edge
+:Edge rdf:type owl:Class ;
+      rdfs:label "Edge"@en ;
+      rdfs:comment """
+      An edge between two distribution points. This is an abstraction of the Connection, which allows 
+      other kinds of edge to be produced between distributionpoints
+      """@en .
+
+###  http://ois.vub.ac.be/foodprint#Reachable
+:Reachable rdf:type owl:Class ;
+           rdfs:subClassOf :Edge ;
+           rdfs:label "Reachable"@en ;
+           rdfs:comment "Is an edge that denotes that a point b is reachable from a point a"@en .
+
+##  http://ois.vub.ac.be/foodprint#Route
+:Route rdf:type owl:Class ;
+       rdfs:label "Route"@en ;
+       rdfs:comment "A route consists of connection, connecting multiple distirbution points together"@en .
+
+
+###  http://ois.vub.ac.be/foodprint#Shop
+:Shop rdf:type owl:Class ;
+      rdfs:subClassOf :DistributionPoint ;
+      rdfs:label "Shop"@en ;
+      rdfs:comment "A shop is the last distribution point is a route. It is where the user can find their products"@en .
+
+###  http://ois.vub.ac.be/foodprint#TransportMode
+:TransportMode rdf:type owl:Class ;
+               rdfs:label "Transport Mode" @en ;
+               rdfs:comment "The mode of transport, eg. car, plane, boat, ..." .
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#Point
+geo:Point rdf:type owl:Class .
+
+
+### http://ois.vub.ac.be/foodprint/routes#Product
+:Product rdf:type owl:Class ;
+         rdfs:label "Product"@en ;
+         rdfs:comment "A product that can travel along a round"@en .
+
+#################################################################
+#    Individuals
+#################################################################
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Connection
+                :Route
+                :Shop
+                :TransportMode
+              )
+] .
+
+
+#################################################################
+#    Rules
+#################################################################
+

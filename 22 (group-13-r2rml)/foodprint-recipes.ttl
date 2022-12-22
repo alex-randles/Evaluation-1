@@ -1,0 +1,413 @@
+@prefix : <http://ois.vub.ac.be/foodprint/ontology/recipes#> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obda: <https://w3id.org/obda/vocabulary#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix routes: <http://ois.vub.ac.be/foodprint/ontology/routes#> .
+@base <http://ois.vub.ac.be/foodprint/ontology/recipes> .
+
+<http://ois.vub.ac.be/foodprint/ontology/recipes> 
+   rdf:type owl:Ontology ;
+   rdfs:label "Foodprint Recipes" ;
+   rdfs:description "A basic ontology for describing recipes" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#consistsOfSteps
+:consistsOfSteps rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Recipe ;
+                 rdfs:range :RecipeStepItem .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#containsIngredient
+:containsIngredient rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Recipe ;
+                    rdfs:range :Ingredient .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#derivedOf
+:derivedOf rdf:type owl:ObjectProperty ;
+           rdfs:domain :DerivedUnit ;
+           rdfs:range :StandardUnit .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#describesStep
+:describesStep rdf:type owl:ObjectProperty ;
+               rdfs:domain :RecipeStepItem ;
+               rdfs:range :Step .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#hasIngredient
+:hasIngredient rdf:type owl:ObjectProperty ;
+               rdfs:domain :RecipeIngredient ;
+               rdfs:range :Ingredient .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#hasIngredientWithQuantity
+:hasIngredientWithQuantity rdf:type owl:ObjectProperty ;
+                           rdfs:domain [ rdf:type owl:Class ;
+                                         owl:unionOf ( :Recipe
+                                                       :Step
+                                                     )
+                                       ] ;
+                           rdfs:range :RecipeIngredient .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#hasUnit
+:hasUnit rdf:type owl:ObjectProperty ;
+         rdfs:domain :RecipeIngredient ;
+         rdfs:range :MeasurementUnit .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#instanceOfProduct
+:instanceOfProduct rdf:type owl:ObjectProperty ,
+                            owl:InverseFunctionalProperty ;
+                   rdfs:domain :Ingredient ;
+                   rdfs:range routes:Product .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#skillLevel
+:skillLevel rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :Recipe ;
+            rdfs:range :Difficulty .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#stepDuration
+:stepDuration rdf:type owl:ObjectProperty ;
+              rdfs:domain :Step ;
+              rdfs:range time:GeneralDurationDescription .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#description
+:description rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Step ;
+             rdfs:range xsd:string .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#hasAmount
+:hasAmount rdf:type owl:DatatypeProperty ;
+           rdfs:domain :RecipeIngredient ;
+           rdfs:range xsd:float .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#multiplier
+:multiplier rdf:type owl:DatatypeProperty ;
+            rdfs:domain :DerivedUnit ;
+            rdfs:range xsd:float .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#name
+:name rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdfs:domain owl:Thing ;
+      rdfs:range xsd:string .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#order
+:order rdf:type owl:DatatypeProperty ;
+       rdfs:domain :RecipeStepItem ;
+       rdfs:range xsd:int .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#DerivedUnit
+:DerivedUnit rdf:type owl:Class ;
+             rdfs:subClassOf :Unit ;
+             rdfs:comment "A non-SI-unit derived from a StandardUnit."@en ;
+             rdfs:label "Derived Unit"@en .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#Difficulty
+:Difficulty rdf:type owl:Class ;
+            owl:equivalentClass [ rdf:type owl:Class ;
+                                  owl:oneOf ( :Advanced
+                                              :Beginner
+                                              :Difficult
+                                              :Easy
+                                              :Intermediate
+                                            )
+                                ] ;
+            rdfs:comment """Difficulty level of a recipe.
+One of: Advanced, Beginner, Difficult, Easy or Intermediate."""@en ;
+            rdfs:label "Difficulty level"@en ,
+                       "difficulty-level"@en .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#Ingredient
+:Ingredient rdf:type owl:Class ;
+            rdfs:comment "An ingredient needed in a recipe such as Potato, Carrot, ..."@en ;
+            rdfs:label "Ingredient"@en .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#MeasurementUnit
+:MeasurementUnit rdf:type owl:Class ;
+                 rdfs:subClassOf :Unit ;
+                 rdfs:comment "The units attached to a quantity."@en ;
+                 rdfs:label "Measurement Unit"@en .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#Recipe
+:Recipe rdf:type owl:Class ;
+        rdfs:comment "A recipe describes the steps needed prepare something (usually food)."@en ;
+        rdfs:label "Recipe"@en .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#RecipeIngredient
+:RecipeIngredient rdf:type owl:Class ;
+                  rdfs:comment "Recipe Ingredient links an ingredient to a quantity."@en ;
+                  rdfs:label "Recipe Ingredient"@en .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#RecipeStepItem
+:RecipeStepItem rdf:type owl:Class ;
+                rdfs:comment "RecipeStepItem forms a linked list of steps necessary for a recipe."@en ;
+                rdfs:label "Recipe Step Item"@en .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#StandardUnit
+:StandardUnit rdf:type owl:Class ;
+              rdfs:subClassOf :Unit ;
+              rdfs:comment "A standard SI-unit as defined by the BIPM."@en ;
+              rdfs:label "Standard Unit"@en .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#Step
+:Step rdf:type owl:Class ;
+      rdfs:comment "A single step in a recipe, such as \"preheat the oven\" or \"cut the potatoes\"."@en ;
+      rdfs:label "Step"@en .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#Unit
+:Unit rdf:type owl:Class ;
+      rdfs:comment "A unit attached to a quantity such as grams, liters, ..."@en ;
+      rdfs:label "Unit"@en .
+
+
+###  http://ois.vub.ac.be/foodprint/routes#Product
+routes:Product rdf:type owl:Class ;
+               rdfs:comment """A concrete instance of an ingredient that can be bought in a store and of which a route exists.
+Product connects ingredients from the recipe ontology to the routes ontology."""@en ;
+               rdfs:label "Product"@en .
+
+
+###  http://www.w3.org/2002/07/owl#DataProperty
+owl:DataProperty rdf:type owl:Class .
+
+
+###  http://www.w3.org/2006/time#GeneralDurationDescription
+time:GeneralDurationDescription rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#Advanced
+:Advanced rdf:type owl:NamedIndividual ,
+                   owl:Thing .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#Beginner
+:Beginner rdf:type owl:NamedIndividual ,
+                   owl:Thing .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#Centilitre
+:Centilitre rdf:type owl:NamedIndividual ,
+                     :DerivedUnit ,
+                     :MeasurementUnit ;
+            :derivedOf :Litre ;
+            :multiplier "0.01"^^xsd:float .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#Difficult
+:Difficult rdf:type owl:NamedIndividual ,
+                    owl:Thing .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#Easy
+:Easy rdf:type owl:NamedIndividual ,
+               owl:Thing .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#Gram
+:Gram rdf:type owl:NamedIndividual ,
+               :DerivedUnit ,
+               :MeasurementUnit ;
+      :derivedOf :Kilogram ;
+      :multiplier "1.0E-4"^^xsd:float .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#Intermediate
+:Intermediate rdf:type owl:NamedIndividual ,
+                       owl:Thing .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#Kilogram
+:Kilogram rdf:type owl:NamedIndividual ,
+                   :MeasurementUnit ,
+                   :StandardUnit .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#Litre
+:Litre rdf:type owl:NamedIndividual ,
+                :StandardUnit .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#hasAmount
+:hasAmount rdf:type owl:NamedIndividual ,
+                    owl:DataProperty .
+
+
+###  http://ois.vub.ac.be/foodprint/ontology/recipes#order
+:order rdf:type owl:NamedIndividual ,
+                owl:DataProperty .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :DerivedUnit
+                :Ingredient
+                :Recipe
+                :RecipeIngredient
+                :RecipeStepItem
+                :Step
+                routes:Product
+              )
+] .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+:x rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:iq rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:i rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#x> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#s1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#s2> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#o1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#o2> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Generate a relation between ingredient and recipe"^^xsd:string ;
+   rdfs:label "Ingredients Recipe"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Recipe ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasIngredientWithQuantity ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :iq
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasIngredient ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :iq ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> :i
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :containsIngredient ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :i
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Recipe ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#x>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :consistsOfSteps ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#x> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#s1>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :consistsOfSteps ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#x> ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#s2>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :order ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s1> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#o1>
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#propertyPredicate> :order ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s2> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#o2>
+                                                                                                 ] ;
+                                                                                       rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                  rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#equal> ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#arguments> ( <urn:swrl:var#o1>
+                                                                                                                                                           <urn:swrl:var#o2>
+                                                                                                                                                         )
+                                                                                                            ] ;
+                                                                                                  rdf:rest rdf:nil
+                                                                                                ]
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#SameIndividualAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#s1> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#s2>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

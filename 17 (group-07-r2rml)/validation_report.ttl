@@ -1,5 +1,5 @@
 @prefix ex: <http://example.org/> .
-@prefix mqv: <https://alex-randles.github.io/MQV/#> .
+@prefix mqv: <hhttp://mappingQualityVocabulary.org/> .
 @prefix mqv-metric: <https://alex-randles.github.io/MQV-METRICS/#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -47,7 +47,7 @@ ex:violation-1671667621-10 a mqv:MappingViolation ;
     mqv:hasLocation "predicateObjectMap7" ;
     mqv:hasValue workouts:duration ;
     mqv:inTripleMap <#WeightWorkout> ;
-    mqv:isDescribedBy ex:D7 ;
+    mqv:isDescribedBy mqv:metricD7 ;
     mqv:resultMessage "Usage of incorrect datatype."^^xsd:string .
 
 ex:violation-1671667621-2 a mqv:MappingViolation ;
